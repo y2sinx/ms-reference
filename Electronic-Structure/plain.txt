@@ -1,0 +1,300 @@
+Content 
+1  Introduction
+1.1  Quantum theory and the origins of electronic structure
+1.2  Emergency of quantitative calculations
+1.3  The greatest challenge: electron correlation
+1.4  Recent development
+2  Overview
+2.1  Electronic ground state: bonding and characteristic structure
+2.2  Volume or Pressure as the most fundamental variable
+2.3  Elasticity: stress-strain relations
+2.4  Magnesium and electron-electron interaction
+2.5  Phones and displacive phase transitions
+2.6  Thermal properties: solids, liquid, and phase diagrams
+2.7  Atomic motion: diffusion, reaction, and catalyst
+2.8  Surfaces, interfaces, and defects
+2.9  Nanomaterials: between molecules and condensed matter
+2.10  Electronic excitations: bands and bands gaps
+2.11  Electronic excitations: heat capacity, conductivity, and optical spectra
+2.12  Example of MgB2: bands, phonons, and superconductivity
+2.13  The continuing challenge: electron correlation
+3  Theoretical background
+3.1  Basic equations for interacting electrons and nuclei
+3.2  Coulomb interaction in condensed matter
+3.3  Force and stress theorems
+3.4  Statistical mechanics and the density matrix
+3.5  Independent-electron approximations
+3.6  Exchange and correlation
+3.7  Perturbation theory and "2n+1" theorem
+4  Periodic solids and electron bands
+4.1  Structure of crystals: lattice + basis
+4.2  The reciprocal lattice and Brillouin zone
+4.3  Excitations and the Bloch theorem
+4.4  Time reversal and inversion symmetries
+4.5  Point symmetries
+4.6  Integration over the Brillouin zone and special points
+4.7  Density of states
+5  Uniform electron gas and simple metals
+5.1  Non-interacting and Hatree-Fock approximations
+5.2  The correlation hole and energy
+5.3  Binding in sp-bonded metals
+5.4  Excitations and the Lindhard dielectic function
+6  Density functional theory: foundations
+6.1  Thomas-Fermi-Dirac approximation: example of functional
+6.2  The Hohenberg-Kone theorems
+6.3  Constrained search formulation of density functional theory
+6.4  Extension of Hohenberg-Kone theorems
+6.5  Intricacies of exact density functional theory
+6.6  Difficulties in proceedings from the density
+7  The Kohn-Sham ansatz
+7.1  Replacing one problem with another
+7.2  the Kohn-Sham variational equations
+7.3   Exc,VxcExc,Vxc  and the exchange-correlation hole
+7.4  Meaning of the eigenvalues
+7.5  Intricies of exact Kohn-Sham theory
+7.6  Time-dependent density functional theory
+7.7  Other generalizations the Kohn-Sham approach
+8  Functionals for exchange and correlation
+8.1  The local spin density approximation(LSDA)
+8.2  Generalized-gradient approximations(GGAs)
+8.3  LDA and GGA expressions for potential  VσXC(r)VXCσ(r) 
+8.4  Non-collinear spin density
+8.5  Non-local density formulation: ADA and WDA
+8.6  Orbital-dependent functionals I: SIC and LDA+U
+8.7  Orbital-dependent functionals II: OEP and EXX
+8.8  Hybrid functionals
+8.9  Tests of functionals
+9  Solving Kohn-Sham equations
+9.1  Self-consistent coupled Kohn-Sham equations
+9.2  Total energy functionals
+9.3  Achieving self-consistency
+9.4  Force and stress
+10  Electronic Structure of atoms
+10.1  One-electron radial  Schro¨dingerSchro¨dinger  equation
+10.2  Independent-particle equations: spherical potentials
+10.3  Open-shell atoms: non-spherical potentials
+10.4  Relativistic Dirac equation and spin-orbit interactions
+10.5  Example of atomic states: transition elements
+10.6  Delta-SCF: electron addition, removal, and interactive energies
+10.7  Atomic sphere approximation in solids
+11  Pseudopotentials
+11.1  Scattering amplitudes and pseudopotentials
+11.2  Orthogonalized plane wave (OPWs) and pseudopotentials
+11.3  Model ion potential
+11.4  Norm-conserving pseudopotentials(NCPPs)
+11.5  Generation of l-dependent norm-conserving pseudopotentials
+11.6  Unscreening and core corrections
+11.7  Transferabiliy and hardness
+11.8  Separable pseudopotentials operators and projectors
+11.9  Extended norm conservation: beyond the linear regime
+11.10  Ultrasoft pseudopotentials
+11.11  Projector augmented wave(PAWs): keeping the full wavefunction
+11.12  additional topics
+12  Plane waves and girds: basics
+12.1  The independent-particle Schrodinger equation in a plane wave basis
+12.2  The Bloch theorem and electron bands
+12.3  Nearly-free-electron approximation
+12.4  Form factors and structure factors
+12.5  Approximate atomic-like potentials
+12.6  Empirical pseudopotentials method(EPM)
+12.7  Calculation of density: introduction of grids
+12.8  Real-space methods
+13  Plane waves and grids: full calculations
+13.1  "ab initio"pseudopotential method
+13.2  Projector augmented waves(PAWs)
+13.3  Simple crystals: structure, bands, ..
+13.4  Supercells: surfaces, intersurfaces, phonons, defects
+13.5  Clusters and molecules
+14  Localized orbitals: tight-binding
+14.1  Localized atom-centered orbitals
+14.2  Matrix elements with atomic orbitals
+14.3  Slater-Koster two-center approximation
+14.4  Tight-binding bandsL illustrative examples
+14.5  Square lattice and CuO2 planes
+14.6  Examples of bands: semiconductor and transition metals
+14.7  Electronic states of nanotubes
+14.8  Total energy,force,and stress in tight-binding
+14.9  Transferability:non-orthogonality and environment dependence
+15  Localized orbitals: full calculations
+15.1  Solution of Kohn-Sham equations in localized bases
+15.2  Analytic basis function: gaussians
+15.3  Gaussian methods:ground state and excitation energies
+15.4  Numerical orbitals
+15.5  Localized orbitals:total energy,force,and stress
+15.6  Application of numerical local orbitals
+15.7  Green's function and recursion methods
+15.8  Mixed basis
+16  Augmented functions: APW, KKP, MTO
+16.1  Augmented plane waves(APWs) and "muffin tins"
+16.2  Solving APW equations: examples
+16.3  The KKR or multiple-scattering theory(MST)method
+16.4  Alloys and the coherent potential approximation(CPA)
+16.5  Muffin-tin orbitals(MTOs)
+16.6  Canonical bands
+16.7  Localized "tight-binding" MTO and KKP formulations
+16.8  Total energy,force,and pressure in augmented methods
+17  Augmented functions: linear methods
+17.1  Energy derivative of the wavefunction:  ψψ  and  ψ˙ψ˙ 
+17.2  General form of linearized equations
+17.3  Linearized augmented plane waves(LAPWs)
+17.4  Applications of the LAPW method
+17.5  Linear muffin-tin orbital(LMTO) method
+17.6  "ab initio" tight-binding
+17.7  Applications of the LMTO method
+17.8  Beyond linear methods: NMTO
+17.9  Full potential in augmented methods
+18  Quantum molecular dynamics(QMD)
+18.1  Molecular dynamics(MD): forces from the electrons
+18.2  Car-Parrinello unified algorithm for electrons and inos
+18.3  Expressions for plane waves
+18.4  Alternative approaches to density functional QMD
+18.5  Non-self-consistent QMD methods
+18.6  Examples of simulations
+19  Response functions: phonons, magnons
+19.1  Lattice dynamics from electronic structure theory
+19.2  The direct approach:"frozen phonons",magnons,...
+19.3  Phonons and density response functions
+19.4  Green's function formulation
+19.5  Variational expressions
+19.6  Periodic perturbations and phonon dispersion curves
+19.7  Dielectric response functions,effective charges,...
+19.8  Electron-phonon interactions and superconductivity
+19.9  Magnons and spin response functions
+20  Excitation spectra and optical properties
+20.1  Dielectric response for non-interacting particles
+20.2  Time-dependent density functional theory and linear response
+20.3  Variational Green's function methods for dynamical linear response
+20.4  Explicit real-time calculations
+20.5  Beyond the adiabatic local approximation
+21  Wannier functions
+21.1  Definiton and properties
+21.2  "Maximally projected" Wannier functions
+21.3  Maximally localized Wannier functions
+21.4  Non-orthogonal localized functions
+21.5  Wannier functions for "entangled bands"
+22  Polarization, localization, and Berry's phases
+22.1  Polarization: the fundamental difficulty
+22.2  Geometric Berry's phase theroy of polarization
+22.3  Relation to centers of Wannier functions
+22.4  Calculation of polarization in crystals
+22.5  Localization: a rigorous measure
+22.6  Geometric Berry's phase theory of spin waves
+23  Locality and linear scaling O(N) methods
+23.1  Locality and linear scaling in many-particle quantum systems
+23.2  Building the hamiltonian
+23.3  Solution of equations: non-variational methods
+23.4  Variational density matrix methods
+23.5  Variational(generalized) Wannier function methods
+23.6  Linear-scaling self-consistent density functional calculations
+23.7  Factorized density matrix for large basis sets
+23.8  Combining the methods
+24  Where to find more
+24.1  Appendix A: Functional equations
+24.1.1  Basic definitions and variational equations
+24.1.2  Functionals in density functional theory including gradients
+24.2  Appendix B: LSDA and GGA functionals
+24.2.1  Local spin density approximation(LSDA)
+24.2.2  Generalized gradient approximation(GGAs)
+24.2.3  GGAs: explicit PBE form
+24.3  Appendix C: Adiabatic approximation
+24.3.1  General formulation
+24.3.2  Electron-phonon interaction
+24.4  Appendix D: Response functional and Green's functions
+24.4.1  Static response functions
+24.4.2  Response functions in self-consistent field theories
+24.4.3  Dynamic response and Kramers-Kroning relations
+24.4.4  Green's functions
+24.5  Appendix E: Dielectric functions and optical properties
+24.5.1  Electromagnetic waves in matter
+24.5.2  Conductivity and dielectric tensors
+24.5.3  The factorized sum rule
+24.5.4  Scalar longitudinal dielectric
+24.5.5  Tensor transverse dielectric functions
+24.5.6  Lattice contributions to dielectric response
+24.6  Appendix F: Coulomb interactions in extended systems
+24.6.1  Basic issues
+24.6.2  Point charges in a background: Ewald sums
+24.6.3  Smeared nuclei or ions
+24.6.4  Energy relative to neutral atoms
+24.6.5  Surface and interface dipoles
+24.6.6  Reducing effects of artificial image charges
+24.7  Appendix G: Stress from electronic structure
+24.7.1  Macroscopic stress and strain
+24.7.2  Stress from two-body pair-wise forces
+24.7.3  Expressions in Fourier components
+24.7.4  Internal strain
+24.8  Appendix H: Energy and stress densities
+24.8.1  Energy density
+24.8.2  Stress density
+24.8.3  Applications
+24.9  Appendix I: Alternative force expressions
+24.9.1  Variational freedom and forces
+24.9.2  Energy differences
+24.9.3  Pressure
+24.9.4  Force and stress
+24.9.5  Force in APW-type methods
+24.10  Appendix J: Scattering and phase shifts
+24.10.1  Scattering and phase shifts for spherical potentials
+24.11  Appendix K: Useful relations and formulas
+24.11.1  Bessel, Neumann, and Hankel functions
+24.11.2  Spherical harmonics and Legendre polynomials
+24.11.3  Real spherical harmonics
+24.11.4  Clebsch-Cordon and Gaunt coefficients
+24.11.5  Chebyshev polynomials
+24.12  Appendix L: Numerical methods
+24.12.1  Numerical intergration and Numerov method
+24.12.2  Steepest descent
+24.12.3  Conjugate gradient
+24.12.4  Quasi-Newton-Raphson methods
+24.12.5  Pulay DIIS full-subspace method
+24.12.6  Broyden Jacobian update methods
+24.12.7  Moments, maximum entropy, kernel polynomial method, and randon vectors
+24.13  Appendix M: Iterative methods in electronic structure
+24.13.1  Why use iterative methods
+24.13.2  Simple relaxation algorithms
+24.13.3  Preconditoning
+24.13.4  Iterative(Krylov) subspaces
+24.13.5  The Lanzos algorithm and recursion
+24.13.6  Davidson algorithms
+24.13.7  Residual minimization in the subspace-RMM-DIIS
+24.13.8  Solution by minimization of the energy functional
+24.13.9  Comparisoncombination of method: minimization of residual or energy
+24.13.10  Exponential projection in imaginary time
+24.13.11  Algorithmic complexity: transforms and sparse hamiltonians
+24.14  Appendix N: Code for empirical pseudopotential and tight-bonding
+24.14.1  Calculations of eigenvalues: modules common to all methods
+24.14.2  Plane wave empirical pseudopotential method(EPM)
+24.14.3  Slater-Koster tight-binding(TB) method
+24.14.4  Sample input file for TBPW
+24.14.5  Two-center matrix elements: expressions for arbitrary angular momentum  ll 
+24.15  Appendix O: Units and conversion factors  
+
+Notation  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1964 @@
+Skip to main content
+
+[
+![Advertisement](//pubads.g.doubleclick.net/gampad/ad?iu=/285/sdata.nature.com/article&sz=728x90&c=1679358351&t=pos%3Dtop%26type%3Darticle%26artid%3Dsdata201785%26doi%3D10.1038/sdata.2017.85%26subjmeta%3D1034,1037,1038,119,301,639,995%26kwrd%3DComputational
+methods,Electronic properties and materials,Electronic
+structure)](//pubads.g.doubleclick.net/gampad/jump?iu=/285/sdata.nature.com/article&sz=728x90&c=1679358351&t=pos%3Dtop%26type%3Darticle%26artid%3Dsdata201785%26doi%3D10.1038/sdata.2017.85%26subjmeta%3D1034,1037,1038,119,301,639,995%26kwrd%3DComputational
+methods,Electronic properties and materials,Electronic structure)
+
+Thank you for visiting nature.com. You are using a browser version with
+limited support for CSS. To obtain the best experience, we recommend you use a
+more up to date browser (or turn off compatibility mode in Internet Explorer).
+In the meantime, to ensure continued support, we are displaying the site
+without styles and JavaScript.
+
+  1. [nature](/)
+  2. [scientific data](/sdata)
+  3. [data descriptors](/sdata/articles?type=data-descriptor)
+  4. [article](/articles/sdata201785)
+
+A Nature Research Journal
+
+Menu
+
+# [![Scientific Data](//media.springernature.com/full/nature-
+cms/uploads/product/sdata/header-d427517d1e85c2dd23b1784eb9b2d3c7.svg)![Scientific
+Data](//media.springernature.com/full/nature-
+cms/uploads/product/sdata/header-615124a9808f8536e43f05520ea077bb.svg)](/sdata)
+
+Search [ E-alert ](https://www.nature.com/my-account/alerts/subscribe-
+journal?list-id=329) [ Submit ](http://www.nature.com/sdata/publish) [ My
+Account ](/nams/svc/myaccount) [ Login
+](https://idp.nature.com/authorize/natureuser?client_id=grover&redirect_uri=https%3A%2F%2Fwww.nature.com%2Farticles%2Fsdata201785)
+
+Data Descriptor  |  Open |  Published: 04 July 2017
+
+# An _ab initio_ electronic transport database for inorganic materials
+
+  * Francesco Ricci1
+  * , Wei Chen2, 3
+  * , Umut Aydemir4
+  * , G. Jeffrey Snyder4
+  * , Gian-Marco Rignanese [ORCID: orcid.org/0000-0002-1422-1205](http://orcid.org/0000-0002-1422-1205)1
+  * , Anubhav Jain2
+  *  & Geoffroy Hautier1
+
+_Scientific Data_ **volume 4**, Article number: 170085 (2017) | [Download
+Citation](/articles/sdata201785.ris)
+
+### Subjects
+
+  * [Computational methods](/subjects/computational-methods)
+  * [Electronic properties and materials](/subjects/electronic-properties-and-materials)
+  * [Electronic structure](/subjects/electronic-structure)
+
+## Abstract
+
+Electronic transport in materials is governed by a series of tensorial
+properties such as conductivity, Seebeck coefficient, and effective mass.
+These quantities are paramount to the understanding of materials in many
+fields from thermoelectrics to electronics and photovoltaics. Transport
+properties can be calculated from a material’s band structure using the
+Boltzmann transport theory framework. We present here the largest
+computational database of electronic transport properties based on a large set
+of 48,000 materials originating from the Materials Project database. Our
+results were obtained through the interpolation approach developed in the
+BoltzTraP software, assuming a constant relaxation time. We present the
+workflow to generate the data, the data validation procedure, and the database
+structure. Our aim is to target the large community of scientists developing
+materials selection strategies and performing studies involving transport
+properties.
+
+### Metadata summary
+
+Design Type(s)|
+
+  * database creation objective 
+
+  
+---|---  
+Measurement Type(s)|
+
+  * electronic transport properties 
+
+  
+Technology Type(s)|
+
+  * computational modeling technique 
+
+  
+Factor Type(s)|
+
+  * inorganic compound or molecule 
+
+  
+Sample Characteristic(s)|
+
+  
+  
+[Download metadata file](https://media.nature.com/original/nature-
+assets/sdata/2017/sdata201785/isa-tab/sdata201785-isa1.zip)
+
+Machine-accessible metadata file describing the reported data (ISA-tab format)
+
+## Background & Summary
+
+Many devices such as solar cells, transistors, and thermoelectric generators
+rely on materials with specific transport properties such as conductivity,
+mobility, and Seebeck coefficient. An insight into the electronic transport
+properties of materials is accessible, although with some limitations, by
+exploiting the semi-classical approach provided by the Boltzmann
+theory[1](/articles/sdata201785#ref1 "Ziman, J. Principles of the Theory of
+Solids. 2nd edn \(Cambridge University Press,
+1972\)."),[2](/articles/sdata201785#ref2 "Nag, B. R. Electron Transport in
+Compound Semiconductors \(Springer Verlag, 1980\)."). The transport tensors
+can indeed be linked to the fundamental electronic structure and atomistic
+properties of any material using Boltzmann transport theory. From the
+knowledge of the band structure (e.g., from ab initio computations within
+density functional theory (DFT)) and of the relaxation times due to different
+scattering processes, solving the Boltzmann transport equation provides indeed
+an assessment of the electronic transport
+tensors[3](/articles/sdata201785#ref3 "Scheidemantel, T. J., Ambrosch-Draxl,
+C., Thonhauser, T., Badding, J. V. & Sofo, J. O. Transport coefficients from
+first-principles calculations. Phys. Rev. B 68, 125210
+\(2003\)."),[4](/articles/sdata201785#ref4 "Madsen, G. K. & Singh, D. J.
+Boltztrap. a code for calculating band-structure dependent quantities.
+Computer Physics Communications 175, 67–71 \(2006\).").
+
+Materials properties can be computed on a unprecedented level using high-
+throughput (HT) ab initio computing[5](/articles/sdata201785#ref5 "Curtarolo,
+S. et al. The high-throughput highway to computational materials design. Nat
+Mater 12, 191–201 \(2013\)."),​[6](/articles/sdata201785#ref6 "Greeley, J.,
+Jaramillo, T. F., Bonde, J., Chorkendorff, I. & Norskov, J. K. Computational
+high-throughput screening of electrocatalytic materials for hydrogen
+evolution. Nat Mater 5, 909–913 \(2006\)."),​[7](/articles/sdata201785#ref7
+"Bhattacharya, S., Chmielowski, R., Dennler, G. & Madsen, G. K. H. Novel
+ternary sulfide thermoelectric materials from high throughput transport and
+defect calculations. J. Mater. Chem. A 4, 11086–11093
+\(2016\)."),​[8](/articles/sdata201785#ref8 "Hautier, G. et al. Novel mixed
+polyanions lithium-ion battery cathode materials predicted by high-throughput
+ab initio computations. J. Mater. Chem. 21, 17147–17153 \(2011\)."). This new
+paradigm is transforming the way materials are discovered, offering the
+possibility to select materials with certain properties before going to the
+lengthy process of synthesis, characterization, and device
+making[9](/articles/sdata201785#ref9 "Jain, A., Shin, Y. & Persson, K. A.
+Computational predictions of energy materials using density functional theory.
+Nature Reviews Materials 1, 15004 \(2016\)."),[10](/articles/sdata201785#ref10
+"Hautier, G., Jain, A. & Ong, S. P. From the computer to the laboratory:
+materials discovery and design using first-principles calculations. Journal of
+Materials Science 47, 7317–7340 \(2012\)."). Large datasets are also useful to
+perform data mining studies where trends and correlations between materials
+properties are revealed[11](/articles/sdata201785#ref11 "Carrete, J., Li, W.,
+Mingo, N., Wang, S. & Curtarolo, S. Finding unprecedentedly low-thermal-
+conductivity half-heusler semiconductors via high-throughput materials
+modeling. Phys. Rev. X 4, 011019 \(2014\)."),​[12](/articles/sdata201785#ref12
+"Hautier, G. et al. Phosphates as lithium-ion battery cathodes: An evaluation
+based on high-throughput ab initio calculations. Chemistry of Materials 23,
+3495–3508 \(2011\)."),​[13](/articles/sdata201785#ref13 "Jain, A., Hautier,
+G., Ong, S. P. & Persson, K. New opportunities for materials informatics:
+Resources and data mining techniques for uncovering hidden relationships.
+Journal of Materials Research 31, 977–994
+\(2016\)."),​[14](/articles/sdata201785#ref14 "Jain, A., Hautier, G., Ong, S.
+P., Dacek, S. & Ceder, G. Relating voltage and thermal safety in li-ion
+battery cathodes: a high-throughput computational study. Phys. Chem. Chem.
+Phys. 17, 5942–5953 \(2015\)."). Freely accessible high-throughput databases
+are being built providing data to a large community of scientists to
+facilitate the screening and data mining
+process[15](/articles/sdata201785#ref15 "Jain, A., Persson, K. A. & Ceder, G.
+Research update: The materials genome initiative: Data sharing and the impact
+of collaborative ab initio databases. APL Mater 4, 053102 \(2016\).") (the
+Materials Project[16](/articles/sdata201785#ref16 "The materials project.
+https://materialsproject.org/."),[17](/articles/sdata201785#ref17 "Jain, A. et
+al. Commentary: The materials project: A materials genome approach to
+accelerating materials innovation. APL Mater 1, 011002 \(2013\)."), Open
+Quantum database[18](/articles/sdata201785#ref18 "Saal, J. E., Kirklin, S.,
+Aykol, M., Meredig, B. & Wolverton, C. Materials design and discovery with
+high-throughput density functional theory: The open quantum materials database
+\(oqmd\). JOM 65, 1501–1509 \(2013\)."), AFLOW[19](/articles/sdata201785#ref19
+"Setyawan, W. & Curtarolo, S. High-throughput electronic band structure
+calculations: Challenges and tools. Computational Materials Science 49,
+299–312 \(2010\)."), NOMAD repository[20](/articles/sdata201785#ref20 "Nomad
+repository. http://nomad-repository.eu."), the Harvard Clean Energy
+Project[21](/articles/sdata201785#ref21 "Hachmann, J. et al. The harvard clean
+energy project: Large-scale computational screening and design of organic
+photovoltaics on the world community grid. The Journal of Physical Chemistry
+Letters 2, 2241–2251 \(2011\).")).
+
+The BoltzTraP code[4](/articles/sdata201785#ref4 "Madsen, G. K. & Singh, D. J.
+Boltztrap. a code for calculating band-structure dependent quantities.
+Computer Physics Communications 175, 67–71 \(2006\).") solves Boltzmann
+equation by interpolating a band structure computed within DFT and performing
+all the required integrations. Since its development, BoltzTraP has been used
+in several high-throughput studies in various fields from thermoelectrics to
+transparent conducting oxides[22](/articles/sdata201785#ref22 "Madsen, G. K.
+H. Automated search for new thermoelectric materials: The case of liznsb.
+Journal of the American Chemical Society 128, 12140–12146
+\(2006\)."),​[23](/articles/sdata201785#ref23 "Chen, W. et al. Understanding
+thermoelectric properties from high-throughput calculations: trends, insights,
+and comparisons with experiment. J. Mater. Chem. C 4, 4414–4426
+\(2016\)."),​[24](/articles/sdata201785#ref24 "Bhattacharya, S. & Madsen, G.
+K. H. High-throughput exploration of alloying as design strategy for
+thermoelectrics. Phys. Rev. B 92, 085205
+\(2015\)."),​[25](/articles/sdata201785#ref25 "Zhang, J. et al. Designing
+high-performance layered thermoelectric materials through orbital engineering.
+Nature Communications 7, 10892 \(2016\)."),​[26](/articles/sdata201785#ref26
+"Opahle, I., Parma, A., McEniry, E. J., Drautz, R. & Madsen, G. K. High-
+throughput study of the structural stability and thermoelectric properties of
+transition metal silicides. New Journal of Physics 15, 105010
+\(2013\)."),​[27](/articles/sdata201785#ref27 "Hautier, G., Miglio, A., Ceder,
+G., Rignanese, G.-M. & Gonze, X. Identification and design principles of low
+hole effective mass p-type transparent conducting oxides. Nature
+Communications 4, 2292 \(2013\).") and also to obtain new general descriptors
+of the band structure[28](/articles/sdata201785#ref28 "Gibbs, Z. M. et al.
+Effective mass and fermi surface complexity factor from ab initio band
+structure calculations. npj Computational Materials 3, 8 \(2017\)."). In this
+paper, we report on a large dataset of electronic transport properties
+obtained by combining high-throughput generated ab initio band structures and
+Boltzmann transport theory within the constant relaxation time approximation.
+In total, we provide access to the computed electronic transport data for
+about 48,000 compounds to this date. This is the largest public database of
+electronic transport data obtained by BoltzTraP and DFT.
+
+This dataset adds to the growing database of materials properties of the
+Materials Project (MP)[16](/articles/sdata201785#ref16 "The materials project.
+https://materialsproject.org/."),[17](/articles/sdata201785#ref17 "Jain, A. et
+al. Commentary: The materials project: A materials genome approach to
+accelerating materials innovation. APL Mater 1, 011002 \(2013\)."). It will be
+accessible via its web interface similar to thermodynamics, battery,
+elastic[29](/articles/sdata201785#ref29 "de Jong, M. et al. Charting the
+complete elastic properties of inorganic crystalline compounds. Scientific
+Data 2, 150009 \(2015\)."), and piezo-electric
+data[30](/articles/sdata201785#ref30 "de Jong, M., Chen, W., Geerlings, H.,
+Asta, M. & Persson, K. A. A database to enable discovery and design of
+piezoelectric materials. Scientific Data 2, 150053 \(2015\)."). In the
+remainder of the paper, we summarize the Boltzmann equation within the
+relaxation time approximation, the properties calculated, and the workflow
+followed. Finally, we present a graphical overview of the data and compare it
+with published computational and experimental values to better understand the
+precision and accuracy of our approach.
+
+## Methods
+
+### Methods definitions
+
+In order to evaluate transport phenomena occurring at the electronic level, a
+microscopic model of the transport process is needed to assess the transport
+coefficients of materials. The basic transport equation of the current density
+in presence of electrical **E** and magnetic **B** field, and a temperature
+gradient **Δ** _T_ is  ji=σijEj+σijkEjBk+νij∇jT+…. In this work, we limit the
+development to the first order in the magnetic field **B** and we focus only
+on the conductivity tensors _σ_ _ij_ , _σ_ _ijk_ , and _ν_ _ij_.
+
+A semi-classical approach based on solving Boltzmann’s equation, within the
+relaxation time approximation, is commonly used to describe the conductivity
+tensors. This model evaluates the electrical conductivity introducing a
+lifetime, _τ_ , for an electron that encapsulates all the different scattering
+mechanisms that it can undergo[1](/articles/sdata201785#ref1 "Ziman, J.
+Principles of the Theory of Solids. 2nd edn \(Cambridge University Press,
+1972\)."),​[2](/articles/sdata201785#ref2 "Nag, B. R. Electron Transport in
+Compound Semiconductors \(Springer Verlag,
+1980\)."),​[3](/articles/sdata201785#ref3 "Scheidemantel, T. J., Ambrosch-
+Draxl, C., Thonhauser, T., Badding, J. V. & Sofo, J. O. Transport coefficients
+from first-principles calculations. Phys. Rev. B 68, 125210 \(2003\).").
+Following the notation used in ref. [4](/articles/sdata201785#ref4 "Madsen, G.
+K. & Singh, D. J. Boltztrap. a code for calculating band-structure dependent
+quantities. Computer Physics Communications 175, 67–71 \(2006\).") describing
+the BoltzTraP code, the conductivity tensors can be written as:
+(1)σαβ(i,k)=e2τi,kυα(i,k)υβ(i,k) and using the Levi-Civita
+tensor[31](/articles/sdata201785#ref31 "Hurd, C.. The Hall Effect in Metals
+and Alloys \(Springer US, 1972\).") _ε_ _ijk_ :
+(2)σαβγ(i,k)=e3τi,k2εγuυυα(i,k)υυ(i,k)Mβu−1, in terms of the group velocity
+and the inverse mass tensor: (3)υα(i,k)=1ℏ∂εi,k∂kα,Mβu−1(i,k)=1ℏ2∂2εi,k∂kβ∂ku.
+
+Apart from the band structure ( _ε_ _i_ , **k** ), the relaxation time _τ_
+_i,_ **k** term needs to be defined. It describes all the scattering processes
+involved in the electronic transport and, in the most general description, it
+depends on both energy band index _i_ and **k** vector direction. In the
+section Limitations, we provide a more detailed description about common
+models used to compute the relaxation time (one of which consist in
+approximating it by a constant) and how we treat it in our HT approach.
+
+Summing over all the bands and all the k-points in the full Brillouin zone, we
+calculate a differential conductivity tensor depending on energy:
+σαβ(ε)=1N∑i,kσαβ(i,k)δ(ε−εi,k), where _i_ is the number of bands and _N_ is
+the number of k-points. The three main transport tensors depending on the
+temperature _T_ and the Fermi level (or chemical potential) of the electrons
+_μ_ are now accessible[4](/articles/sdata201785#ref4 "Madsen, G. K. & Singh,
+D. J. Boltztrap. a code for calculating band-structure dependent quantities.
+Computer Physics Communications 175, 67–71 \(2006\).") :
+
+1\. the conductivity related to the electric field:
+(4)σαβ(T;µ)=1Ω∫σαβ(ε)[−∂fµ(T;ε)∂ε]dε,
+
+2\. the conductivity related to the electric and magnetic field:
+(5)σαβγ(T;µ)=1Ω∫σαβγ(ε)[−∂fµ(T;ε)∂ε]dε,
+
+3\. the conductivity related to the thermal gradient:
+ναβ(T;µ)=1eTΩ∫σαβ(ε−µ)[−∂fµ(T;ε)∂ε]dε,
+
+4\. the electronic contribution to thermal conductivity:
+(6)καβ0(T;µ)=1e2TΩ∫σαβ(ε)(ε−µ)2[−∂fµ(T;ε)∂ε]dε. where _f_ _μ_ is the Fermi
+distribution, Ω is the volume of the unit cell, and _e_ the electron charge.
+From these tensorial quantities, it is straightforward to determine the other
+following quantities:
+(7)κijel=κij0−Tνiα(σ−1)βανβj,theelectronicthermalconductivityatzeroelectriccurrent;
+(8)Sij=Ei(∇jT)−1=(σ−1)αiναj,theSeebeckcoefficient;
+(9)Rijk=EjindjiapplBkappl=(σ−1)αjσαβk(σ−1)iβ,theHallcoefficient;
+(10)n(T;µ)=nυ−1Ω∫g(ε)fµ(T;ε)dε,thedopingcarrierconcentration.
+
+The Seebeck coefficient _S_ _ij_ , also known as thermopower, is one of the
+characteristic properties of thermoelectrics. Within the constant relaxation
+time approximation, 1/ _R_ _ijk_ is proportional to the Hall carrier density,
+a quantity usually obtained in experiments by Hall effect measurements. _n_ (
+_T_ ; _μ_ ) is the electron or hole concentration depending on the doping
+type, calculated via the density of states _g_ ( _ε_ ), the number of valence
+electrons per volume nυ and the Fermi distribution _f_ _μ_ ( _T_ ; _ε_ ). All
+these quantities are part of the standard output of the BoltzTraP code.
+
+In addition, we computed the conductivity effective mass. This effective mass
+is simply derived from the conductivity tensor and the doping carrier
+concentration: (11)M¯αβ−1=σαβne2τ
+
+We note that this definition works properly only for semiconductors where the
+doping carrier concentration (equation (10)) is well defined. In metals and
+small gap materials it fails because the doping carrier concentration deviates
+from the total carrier concentration, as we discuss further in the Usage
+Notes. Effective mass tensors are typically evaluated from band structures by
+computing second derivatives at a certain k-point (e.g., the valence band
+maximum or conduction band minimum) along certain symmetry lines through
+finite differences. There are numerical challenges in doing
+so[32](/articles/sdata201785#ref32 "Laflamme Janssen, J. et al. Precise
+effective masses from density functional perturbation theory. Phys. Rev. B 93,
+205147 \(2016\).") and choosing the k-point to evaluate the effective mass is
+not obvious when facing band structures with important non-parabolicity,
+multiple degenerate bands or pockets with close energy in different part of
+the Brillouin zone. The conductivity effective mass can be also seen as an
+average over the Brillouin zone and bands of the k-dependent second derivative
+(equation (3)) as integration by parts leads to:
+(12)M¯αβ−1=−∑i∫Mαβ−1(i,k)fµ(εi,k,T)dk4π3∑i∫fµ(εi,k,T)dk4π3.
+
+We note that this conductivity effective mass tensor is dependent on
+temperature and doping level. This quantity has been successfully used for
+high-throughput screening of new low effective mass transparent conducting and
+thermoelectric materials[27](/articles/sdata201785#ref27 "Hautier, G., Miglio,
+A., Ceder, G., Rignanese, G.-M. & Gonze, X. Identification and design
+principles of low hole effective mass p-type transparent conducting oxides.
+Nature Communications 4, 2292 \(2013\)."),[28](/articles/sdata201785#ref28
+"Gibbs, Z. M. et al. Effective mass and fermi surface complexity factor from
+ab initio band structure calculations. npj Computational Materials 3, 8
+\(2017\)."),[33](/articles/sdata201785#ref33 "Hautier, G., Miglio, A.,
+Waroquiers, D., Rignanese, G.-M. & Gonze, X. How does chemistry influence
+electron effective mass in oxides? a high-throughput computational analysis.
+Chemistry of Materials 26, 5447–5458
+\(2014\)."),​[34](/articles/sdata201785#ref34 "Bhatia, A. et al. High-mobility
+bismuth-based transparent p-type oxide from high-throughput material
+screening. Chemistry of Materials 28, 30–34
+\(2016\)."),​[35](/articles/sdata201785#ref35 "Varley, J. B. et al. High-
+throughput design of non-oxide p-type transparent conducting materials: Data
+mining, search strategy, and identification of boron phosphide. Chemistry of
+Materials 29, 2568–2573 \(2017\)."). Hereafter, when we refer to calculated
+effective mass we mean conductivity effective mass.
+
+The integration of Boltzmann’s equation requires an analytical description of
+the band structure. The BoltzTraP code provides it using an interpolation
+method based on a Fourier expansion of the band energies that maintains the
+space group symmetry by using star functions. The basic idea of this technique
+is to use more star functions than band-energies, but constraining the number
+of fit bands ε˜ to be equal to the number of energy bands _ε_ and using the
+additional freedom to minimize a roughness function _ρ_. This method was
+introduced by Shankland[36](/articles/sdata201785#ref36 "Shankland, D. G.
+Computational Methods in Band Theory, 362 \(Plenum, 1971\).") , verified and
+tested by Koelling and Wood[37](/articles/sdata201785#ref37 "Koelling, D. &
+Wood, J. On the interpolation of eigenvalues and a resultant integration
+scheme. Journal of Computational Physics 67, 253–262 \(1986\)."), and modified
+by Pickett _et al._[38](/articles/sdata201785#ref38 "Pickett, W. E., Krakauer,
+H. & Allen, P. B. Smooth fourier interpolation of periodic functions. Phys.
+Rev. B 38, 2721–2726 \(1988\)."). The BoltzTraP code has been largely tested
+over the last decade in different applications ranging from
+superconductors[39](/articles/sdata201785#ref39 "Allen, P. B., Pickett, W. E.
+& Krakauer, H. Anisotropic normal-state transport properties predicted and
+analyzed for high-Tc oxide superconductors. Phys. Rev. B 37, 7482–7490
+\(1988\).") to thermoelectric[40](/articles/sdata201785#ref40 "Singh, D. J. &
+Mazin, I. I. Calculated thermoelectric properties of la-filled skutterudites.
+Phys. Rev. B 56, R1650–R1653 \(1997\)."),​[41](/articles/sdata201785#ref41
+"Zhu, H., Sun, W., Armiento, R., Lazic, P. & Ceder, G. Band structure
+engineering through orbital interaction for enhanced thermoelectric power
+factor. Applied Physics Letters 104, 082107
+\(2014\)."),​[42](/articles/sdata201785#ref42 "Ong, K. P., Singh, D. J. & Wu,
+P. Analysis of the thermoelectric properties of n-type zno. Phys. Rev. B 83,
+115110 \(2011\)."),​[43](/articles/sdata201785#ref43 "Zhu, H. et al.
+Computational and experimental investigation of TmAgTe2 and XYZ2 compounds, a
+new group of thermoelectric materials identified by first-principles high-
+throughput screening. J. Mater. Chem. C 3, 10554–10565
+\(2015\)."),​[44](/articles/sdata201785#ref44 "Aydemir, U. et al. YCuTe2: a
+member of a new class of thermoelectric materials with CuTe4-based layered
+structure. J. Mater. Chem. A 4, 2461–2472 \(2016\).") materials, and good
+agreement has been found with experimental values in several
+cases[45](/articles/sdata201785#ref45 "Madsen, G. K. H., Schwarz, K., Blaha,
+P. & Singh, D. J. Electronic structure and transport in type-I and type-VIII
+clathrates containing strontium, barium, and europium. Phys. Rev. B 68, 125212
+\(2003\)."),​[46](/articles/sdata201785#ref46 "Bentien, A., Pacheco, V.,
+Paschen, S., Grin, Y. & Steglich, F. Transport properties of composition tuned
+α- and β-Eu8Ga16−xGe30+x. Phys. Rev. B 71, 165206
+\(2005\)."),​[47](/articles/sdata201785#ref47 "Pacheco, V. et al. Relationship
+between composition and charge carrier concentration in Eu8Ga16−xGe30+x
+clathrates. Phys. Rev. B 71, 165205 \(2005\)."). From a practical point of
+view, the BoltzTraP code takes as input the electronic energies for different
+k-points, previously calculated by a DFT code (or other methods), interpolates
+the bands, and computes the Fermi integrals for different temperatures and
+Fermi level. Finally, it returns as output all the transport coefficients,
+along with other data such as the coefficients of the interpolating function.
+
+Finally, we also would like to mention the BoltzWann
+code[48](/articles/sdata201785#ref48 "Pizzi, G., Volja, D., Kozinsky, B.,
+Fornari, M. & Marzari, N. Boltzwann: A code for the evaluation of
+thermoelectric and electronic transport properties with a maximally-localized
+wannier functions basis. Computer Physics Communications 185, 422–429
+\(2014\)."): a recent attempt to interpolate bands using Wannier
+functions[49](/articles/sdata201785#ref49 "Marzari, N. & Vanderbilt, D.
+Maximally localized generalized wannier functions for composite energy bands.
+Phys. Rev. B 56, 12847–12865 \(1997\)."). Although it provides a greater
+accuracy for the interpolated band structures, (e.g., treating the band
+crossings better), this method has not been as widely tested as BoltzTraP, and
+it is difficult to exploit within a HT framework since the automated
+construction of Wannier functions is still in its early
+stages[50](/articles/sdata201785#ref50 "Mustafa, J. I., Coh, S., Cohen, M. L.
+& Louie, S. G. Automated construction of maximally localized wannier
+functions: Optimized projection functions method. Phys. Rev. B 92, 165134
+\(2015\).").
+
+### Computational parameters
+
+The input data needed to run BoltzTraP are the crystal structure and the
+electronic band structure on a uniform grid. Both of these inputs are computed
+using the standard high-throughput density functional theory (HT-DFT) recipe
+from the MP summarized in refs [51](/articles/sdata201785#ref51 "Jain, A. et
+al. A high-throughput infrastructure for density functional theory
+calculations. Computational Materials Science 50, 2295–2310
+\(2011\)."),[52](/articles/sdata201785#ref52 "The materials project wiki page.
+http://materialsproject.org/wiki/index.php/Calculations_Wiki."). The DFT
+calculations were performed using the Vienna Ab initio Simulation Package
+(VASP)[53](/articles/sdata201785#ref53 "Kresse, G. & Hafner, J. Ab initio
+molecular dynamics for liquid metals. Phys. Rev. B 47, 558–561
+\(1993\)."),[54](/articles/sdata201785#ref54 "Kresse, G. & Furthmüller, J.
+Efficient iterative schemes for ab initio total-energy calculations using a
+plane-wave basis set. Phys. Rev. B 54, 11169–11186 \(1996\).") using the
+Perdew-Burke-Ernzerhof (PBE)[55](/articles/sdata201785#ref55 "Perdew, J. P.,
+Burke, K. & Ernzerhof, M. Generalized gradient approximation made simple.
+Phys. Rev. Lett. 77, 3865–3868 \(1996\).") generalized gradient approximation
+(GGA) and adopting the projector augmented-wave
+(PAW)[56](/articles/sdata201785#ref56 "Blöchl, P. E. Projector augmented-wave
+method. Phys. Rev. B 50, 17953–17979
+\(1994\)."),[57](/articles/sdata201785#ref57 "Kresse, G. & Joubert, D. From
+ultrasoft pseudopotentials to the projector augmented-wave method. Phys. Rev.
+B 59, 1758–1775 \(1999\).") approach. For transition metal oxides with
+localized _d_ orbitals, the GGA+U method was employed setting the MP standard
+Hubbard corrections[58](/articles/sdata201785#ref58 "Anisimov, V. I., Zaanen,
+J. & Andersen, O. K. Band theory and mott insulators: Hubbard U instead of
+stoner I. Phys. Rev. B 44, 943–954
+\(1991\)."),[59](/articles/sdata201785#ref59 "Dudarev, S. L., Botton, G. A.,
+Savrasov, S. Y., Humphreys, C. J. & Sutton, A. P. Electron-energy-loss spectra
+and the structural stability of nickel oxide: An lsda+u study. Phys. Rev. B
+57, 1505–1509 \(1998\)."). Most of the structures contained in the MP database
+originate from the Inorganic Crystal Structures Database
+(ICSD)[60](/articles/sdata201785#ref60 "Belsky, A., Hellenbrandt, M., Karen,
+V. L. & Luksch, P. New developments in the Inorganic Crystal Structure
+Database \(ICSD\): accessibility in support of materials research and design.
+Acta Crystallographica Section B 58, 364–369
+\(2002\)."),[61](/articles/sdata201785#ref61 "Bergerhoff, G., Hundt, R.,
+Sievers, R. & Brown, I. D. The inorganic crystal structure data base. Journal
+of Chemical Information and Computer Sciences 23, 66–69 \(1983\)."). The
+others come from previous high-throughput projects (e.g., a Li-ion battery
+screening project[51](/articles/sdata201785#ref51 "Jain, A. et al. A high-
+throughput infrastructure for density functional theory calculations.
+Computational Materials Science 50, 2295–2310 \(2011\).") ) as well as from
+other databases (e.g., the Open Quantum Materials
+Database[18](/articles/sdata201785#ref18 "Saal, J. E., Kirklin, S., Aykol, M.,
+Meredig, B. & Wolverton, C. Materials design and discovery with high-
+throughput density functional theory: The open quantum materials database
+\(oqmd\). JOM 65, 1501–1509 \(2013\).")). All structures were fully-relaxed
+(cell and atomic positions) using a two-step procedure, until the energy
+difference is lower than 0.0005 eV/atoms. All relaxations were performed with
+spin polarization on and initializing magnetic ions in a high-spin
+ferromagnetic. For subsequent calculations spin-polarization was retained only
+when the relaxation results demonstrated non-zero atomically projected
+magnetic moments. The band structure calculations were determined for standard
+primitive cells according to the conventions of Setyawan and
+Curtarolo[19](/articles/sdata201785#ref19 "Setyawan, W. & Curtarolo, S. High-
+throughput electronic band structure calculations: Challenges and tools.
+Computational Materials Science 49, 299–312 \(2010\)."). A self-consistent
+static calculation was first performed in order to converge the charge density
+using a moderate k-point density to sample the Brillouin zone (90 k-points per
+Å−3 (reciprocal lattice volume) for large gap systems (≥0.5 eV) and of 450
+k-points per Å−3 for those with small gap (<0.5 eV)). The tetrahedron method
+has been used for the band structure integration over k space in most of the
+cases. Whenever this method fails, the Gaussian smearing method has been
+used[51](/articles/sdata201785#ref51 "Jain, A. et al. A high-throughput
+infrastructure for density functional theory calculations. Computational
+Materials Science 50, 2295–2310 \(2011\)."),[52](/articles/sdata201785#ref52
+"The materials project wiki page.
+http://materialsproject.org/wiki/index.php/Calculations_Wiki."). Then, two
+non-self-consistent calculations were performed to evaluate the band
+structures: the first one along symmetry lines as defined in ref.
+[19](/articles/sdata201785#ref19 "Setyawan, W. & Curtarolo, S. High-throughput
+electronic band structure calculations: Challenges and tools. Computational
+Materials Science 49, 299–312 \(2010\).") and the second one on an uniform
+k-point grid (1,000 k-points per Å−3 for large band gap systems, i.e., ≥0.5
+eV, estimated from self-consistent runs and 1,500 k-points per Å−3 for small
+band gap systems i.e., <0.5 eV). Spin-orbit coupling was not considered in the
+current study, but could be implemented as a next step to refine the database.
+
+Doping (i.e., introduction of additional carriers either holes or electrons)
+has a tremendous effect on electronic transport properties. Doping will set
+the Fermi level ( _μ_ ) and directly influence the values of the transport
+properties. A first dataset provides all the transport quantities for both
+n-type and p-type doping at fixed doping levels ranging from 1016 to 1020
+cm−3, increasing the doping by one order of magnitude at each step. A second
+and finer dataset provides the electronic transport properties at various
+Fermi level energies (on a uniform bin from −1.5 to 1.5 eV around the Fermi
+level with an energy increment of 0.005 eV), and temperatures (ranging from
+100 to 1,300 K with an increment of 100 K). The transport quantities
+accessible in the two datasets are listed in Tables 1 and 2. We should note
+that users interested in values for doping levels not within our fixed dopings
+from 1016 to 1020cm−3 can use the finer dataset to compute more precise doping
+(see Usage Notes).
+
+ **Table 1: Transport properties stored in the first dataset with their units
+and data size.**
+
+[ Full size table](/articles/sdata201785/tables/1)
+
+ **Table 2: Transport properties stored in the second dataset with their units
+and data size.**
+
+[ Full size table](/articles/sdata201785/tables/2)
+
+### Limitations
+
+Here, we would like to discuss the main approximation which is made in this
+work: the constant relaxation time. Looking at the conductivity tensor, the
+relaxation time _τ_ _i,_ **k** is written in the general form as a tensor
+depending on both the energy and the direction. All scattering events that can
+influence electron conduction such as impurity scattering, phonon scattering,
+etc., are included in this parameter[1](/articles/sdata201785#ref1 "Ziman, J.
+Principles of the Theory of Solids. 2nd edn \(Cambridge University Press,
+1972\)."),[2](/articles/sdata201785#ref2 "Nag, B. R. Electron Transport in
+Compound Semiconductors \(Springer Verlag,
+1980\)."),[62](/articles/sdata201785#ref62 "Mahan, G. D. Intern. Tables for
+Crystall. D Vol. 1, Chap. 8 220–227 \(Cambridge University Press, 2006\).").
+Considering this term as a constant thus means that it is modeled to be
+isotropic and not strongly varying at the energy scale of _k_ _B_ _T_. This is
+a strong approximation that it is known to be far from experimental values for
+several materials. Many models have been proposed and tested in order to take
+into account different scattering processes, both
+empirical[39](/articles/sdata201785#ref39 "Allen, P. B., Pickett, W. E. &
+Krakauer, H. Anisotropic normal-state transport properties predicted and
+analyzed for high-Tc oxide superconductors. Phys. Rev. B 37, 7482–7490
+\(1988\)."),[63](/articles/sdata201785#ref63 "Delugas, P. et al. Doping-
+induced dimensional crossover and thermopower burst in nb-doped srtio3
+superlattices. Phys. Rev. B 88, 045310
+\(2013\)."),​[64](/articles/sdata201785#ref64 "Filippetti, A. et al.
+Thermopower in oxide heterostructures: The importance of being multiple-band
+conductors. Phys. Rev. B 86, 195301
+\(2012\)."),​[65](/articles/sdata201785#ref65 "Filippetti, A., Fiorentini, V.,
+Ricci, F., Delugas, P. & Íñiguez, J. Prediction of a native ferroelectric
+metal. Nature Communications 7, 11211
+\(2016\)."),​[66](/articles/sdata201785#ref66 "Durczewski, K. & Ausloos, M.
+Nontrivial behavior of the thermoelectric power: Electron-electron versus
+electron-phonon scattering. Phys. Rev. B 61, 5303–5310 \(2000\).") and first-
+principles[67](/articles/sdata201785#ref67 "Faghaninia, A., Ager, J. W. & Lo,
+C. S. Ab initio electronic transport model with explicit solution to the
+linearized boltzmann transport equation. Phys. Rev. B 91, 235123
+\(2015\)."),[68](/articles/sdata201785#ref68 "Giustino, F., Cohen, M. L. &
+Louie, S. G. Electron-phonon interaction using wannier functions. Phys. Rev. B
+76, 165108 \(2007\)."). However such models for going beyond the constant
+relaxation time are more complex and introduce a dependence on further
+materials properties such as electron-phonon interaction, deformation
+potential, elastic constants, and dielectric constants. They are therefore
+more difficult to use on a high-throughput scale for thousands of materials.
+We should stress that while more accurate approaches exist, particularly for
+detailed studies of single materials, the constant relaxation time is
+extremely useful for a first screening and for getting general trends if the
+user keeps in mind its limitations[23](/articles/sdata201785#ref23 "Chen, W.
+et al. Understanding thermoelectric properties from high-throughput
+calculations: trends, insights, and comparisons with experiment. J. Mater.
+Chem. C 4, 4414–4426 \(2016\)."),​[24](/articles/sdata201785#ref24
+"Bhattacharya, S. & Madsen, G. K. H. High-throughput exploration of alloying
+as design strategy for thermoelectrics. Phys. Rev. B 92, 085205
+\(2015\)."),​[25](/articles/sdata201785#ref25 "Zhang, J. et al. Designing
+high-performance layered thermoelectric materials through orbital engineering.
+Nature Communications 7, 10892 \(2016\).").
+
+As conductivities (thermal and electronic) depend proportionally on the
+relaxation time within our constant relaxation time framework, we provide
+those quantities per unit of relaxation time. The user could then simply
+multiply these values by a constant relaxation time (typically 10−14 to 10−15
+s) to obtain the final transport properties. The Seebeck coefficient does not
+depend on the relaxation time within the constant relaxation time
+approximation. We remind though that in this approximation the sign of Seebeck
+coefficient is wrong for some metals[69](/articles/sdata201785#ref69 "Xu, B. &
+Verstraete, M. J. First principles explanation of the positive seebeck
+coefficient of lithium. Phys. Rev. Lett. 112, 196603 \(2014\).").
+
+Another issue is related to the k-point grid. Its density is quite important
+for the precision of transport properties calculated by interpolation. A known
+problem of the Fourier interpolation is the incorrect determination of band
+derivatives near band crossings. This problem has been analyzed in ref.
+[38](/articles/sdata201785#ref38 "Pickett, W. E., Krakauer, H. & Allen, P. B.
+Smooth fourier interpolation of periodic functions. Phys. Rev. B 38, 2721–2726
+\(1988\).") demonstrating that if the band crossing is not too close to the
+Fermi level, the derivative and curvature of the bands are not much affected.
+A possible solution has been proposed by Uehara _et
+al._[70](/articles/sdata201785#ref70 "Uehara, K. & Tse, J. S. Calculations of
+transport properties with the linearized augmented plane-wave method. Phys.
+Rev. B 61, 1639–1642 \(2000\)."). Also, as mentioned in ref.
+[4](/articles/sdata201785#ref4 "Madsen, G. K. & Singh, D. J. Boltztrap. a code
+for calculating band-structure dependent quantities. Computer Physics
+Communications 175, 67–71 \(2006\)."), this problem is localized only along
+high-symmetry lines. A dense k-point grid will often solve this issue, and
+since properties are averaged with respect to k-points and bands their
+accuracy is not affected significantly. When considering a limited number of
+materials, a very dense k-grid is commonly used. For example, Madsen suggests
+64·10 6/ _V_ k-points in the full Brillouin
+zone[24](/articles/sdata201785#ref24 "Bhattacharya, S. & Madsen, G. K. H.
+High-throughput exploration of alloying as design strategy for
+thermoelectrics. Phys. Rev. B 92, 085205 \(2015\)."). Since we are dealing
+with thousands of materials, the k-point grid used in this project is coarser.
+It represents a compromise between computational time and accuracy. However,
+we stress here that we use a validation method (see Validation section) which
+tests the quality of the band structure interpolation and assesses if the
+k-point grid is dense enough to avoid any large failure of the interpolation
+scheme.
+
+Finally, standard density functionals such as the generalized gradient
+approximation (GGA) used in this work are known to underestimate band gaps. We
+have found that, in particular, materials for which we predict band gaps less
+then about 10 kBT, but the true gaps are higher than this value, can be
+subject to larger errors in the predicted
+properties[23](/articles/sdata201785#ref23 "Chen, W. et al. Understanding
+thermoelectric properties from high-throughput calculations: trends, insights,
+and comparisons with experiment. J. Mater. Chem. C 4, 4414–4426 \(2016\).").
+
+### Workflow
+
+The sequence of steps used for the HT calculations in order to produce the
+dataset is illustrated in Fig. 1. It has been automated using the FireWorks
+workflow software[71](/articles/sdata201785#ref71 "Jain, A. et al. Fireworks:
+a dynamic workflow system designed for high-throughput applications.
+Concurrency and Computation: Practice and Experience 27, 5037–5059
+\(2015\)."). The Materials Project provides the GGA/GGA+U band structure on a
+uniform grid for the majority of the materials. On this set of materials, we
+executed the BoltzTraP code exploiting the BoltztrapRunner class from the
+pymatgen software[72](/articles/sdata201785#ref72 "Ong, S. P. et al. Python
+materials genomics \(pymatgen\): A robust, open-source python library for
+materials analysis. Computational Materials Science 68, 314–319 \(2013\).").
+This class, written by some of the authors of this paper, automates writing
+the four input files required by BoltzTraP, converting units (from eV in Ry
+and from bohr to Å), checking possible known errors in the output log file,
+and rerunning BoltzTraP with different parameters in order to solve them. This
+class also includes an internal loop on two main parameters to get a
+convergence of the conductivity effective mass. The two tuned parameters in
+the loop are the _lpfac_ , controlling the multiplier for the interpolated
+mesh and the _energy_grid_ that is the increment _dε_ used to compute the
+integral of transport properties. We use another class of pymatgen that we
+developed, called BoltztrapAnalyzer, to extract the properties from the output
+and transform them into Python dictionaries that organize the data according
+to the doping type, doping levels, and temperatures.
+
+ **Figure 1: Flowchart illustrating the HT calculation scheme used to
+calculate and store transport properties.**
+
+[![Figure 1](https://media.nature.com/m685/nature-
+assets/sdata/2017/sdata201785/images_hires/sdata201785-f1.jpg)](/articles/sdata201785/figures/1)
+
+[ Full size image](/articles/sdata201785/figures/1)
+
+Before storing the transport properties, we perform a validation step, which
+compares the bandstructure on high-symmetry lines calculated by DFT with those
+interpolated by BoltzTraP. Having a rough assessment of the interpolation
+accuracy, we can weight the reliability of the related properties. We can also
+determine in which cases the uniform grid is too sparse, and when needed,
+recompute the band structure with a denser grid. This validation step is
+discussed further in the validation section.
+
+Finally, once all the properties are collected for each material, we store
+them in the form of a JSON (JavaScript Object Notation) data document in the
+Dryad-repository ([Data Citation 1](/articles/sdata201785#cite1): Dryad
+digital repository <https://doi.org/10.5061/dryad.gn001>). Furthermore, in the
+future all currently available data will be accessible via the MP website and
+obtainable by the MP REST API[73](/articles/sdata201785#ref73 "Ong, S. P. et
+al. The materials application programming interface \(api\): A simple,
+flexible and efficient {API} for materials data based on {REpresentational}
+state transfer \(rest\) principles. Computational Materials Science 97,
+209–215 \(2015\)."),[74](/articles/sdata201785#ref74 "Fielding, R. T.
+Architectural Styles and the Design of Network-based Software Architectures,
+Ph.D. thesis University of California, Irvine
+http://www.ics.uci.edu/fielding/pubs/dissertation/top.htm \(2000\).").
+
+### Code availability
+
+The proprietary Vienna Ab Initio Simulation Package (VASP)
+code[53](/articles/sdata201785#ref53 "Kresse, G. & Hafner, J. Ab initio
+molecular dynamics for liquid metals. Phys. Rev. B 47, 558–561
+\(1993\)."),[54](/articles/sdata201785#ref54 "Kresse, G. & Furthmüller, J.
+Efficient iterative schemes for ab initio total-energy calculations using a
+plane-wave basis set. Phys. Rev. B 54, 11169–11186 \(1996\).") is used in this
+work for the calculation of band structures. The BoltzTraP code is open source
+and freely accessible. The python classes used to run the BoltzTraP code,
+extract its output, format it, and perform the accuracy check on bands are
+implemented in the pymatgen software[72](/articles/sdata201785#ref72 "Ong, S.
+P. et al. Python materials genomics \(pymatgen\): A robust, open-source python
+library for materials analysis. Computational Materials Science 68, 314–319
+\(2013\)."). Pymatgen is released under the MIT (Massachusetts Institute of
+Technology) License and is open source. The workflow depicted in Fig. 1 is
+implemented using the FireWorks software[71](/articles/sdata201785#ref71
+"Jain, A. et al. Fireworks: a dynamic workflow system designed for high-
+throughput applications. Concurrency and Computation: Practice and Experience
+27, 5037–5059 \(2015\)."), which is open source under a modified GPL (GNU
+General Public License). Although VASP is available only under commercial
+license, the present results can be reproduced by querying for the band
+structures in the MP database using the associated mp-id and then running
+BoltzTraP calculations.
+
+## Data Records
+
+The calculated transport properties of ~48,000 materials are reported in the
+present work. All the considered materials are inorganic solid crystal
+compounds. Molecules are not included. In order to have an overview of the
+dataset of structures, we can define two partitions according to the DFT-GGA
+band gap: about 18,000 metals and about 25,000 semiconductors with band gap
+higher than 0.1 eV. The calculated transport properties and the associated
+metadata of all the materials are grouped into two datasets: the first dataset
+contains higher-level information (the properties listed in Table 1 and the
+metadata in Table 3); the second dataset contains more detailed information
+(the properties listed in Table 2). For each material, we provide the
+transport properties calculated from the GGA band structure (~46,000) and, if
+available, also from the GGA+U one (~13,000). We stress that both GGA and
+GGA+U data can be available for the same compound. The two datasets contain a
+JSON file for each material, grouped in unique compressed archive and stored
+in the Dryad-repository ([Data Citation 1](/articles/sdata201785#cite1): Dryad
+digital repository <https://doi.org/10.5061/dryad.gn001>). All the data will
+additionally be made accessible through the Materials Project website
+([www.materialsproject.org](http://www.materialsproject.org)). The Materials
+API[73](/articles/sdata201785#ref73 "Ong, S. P. et al. The materials
+application programming interface \(api\): A simple, flexible and efficient
+{API} for materials data based on {REpresentational} state transfer \(rest\)
+principles. Computational Materials Science 97, 209–215 \(2015\).") and a
+dedicated web interface of the MP website will be available for downloading
+the data and querying materials for certain transport properties. The MP
+website will also include dedicated pages with details for each compound,
+giving an overview of its calculated properties as well as the calculation
+parameters.
+
+ **Table 3: Additional keys for each entry of both datasets and their
+descriptions.**
+
+[ Full size table](/articles/sdata201785/tables/3)
+
+### File format
+
+The data for each of the calculated material is stored as a JSON document
+([Data Citation 1](/articles/sdata201785#cite1): Dryad digital repository
+<https://doi.org/10.5061/dryad.gn001>). The JSON format is comprised of
+hierarchical key-value pairs. Tables 1 and 2 report the first level JSON keys,
+units, the datatype of the values, and a short description, for both datasets.
+Table 4 contains a description of the dictionary used to store the output of
+the check of the interpolation of bands. All these keys are inside the main
+root key called ‘GGA’ (and/or ‘GGA+U’ when available). Table 5 offers a
+description of the structure of the dictionary used for collecting all the
+values of each property according to doping type, temperature, doping level,
+and data type. Additional keys (located at the root level) are provided as
+metadata for each entry of both datasets. They contain information regarding
+some of the properties of the materials, such as the crystal structure and a
+unique mp-id for structure identification within the MP database.
+
+ **Table 4: Description of the dictionary structure used to store the output
+of the interpolation check of bands.**
+
+[ Full size table](/articles/sdata201785/tables/4)
+
+ **Table 5: Description of the dictionary structure used to store transport
+properties in both datasets.**
+
+[ Full size table](/articles/sdata201785/tables/5)
+
+### Properties
+
+The properties included in the two datasets are reported in Tables 1 and 2.
+Each property is stored in a dictionary and, except for the effective mass,
+has been calculated for various doping types, temperatures, doping levels, and
+data type. All these cases are accessible by the sub-keys reported in Table 5.
+
+In the first dataset, the following properties are stored: Seebeck
+coefficient, electronic conductivity (divided by _τ_ ), and electronic thermal
+conductivity (divided by _τ_ ) for different doping (type and levels) and
+temperature; carrier and Hall carrier concentration for different temperatures
+as a function of the Fermi level (energy steps contained as values of the
+_mu_steps_ key); effective masses for a doping concentration of 10 18 cm−3 at
+300 K, where n- and p-type refer to electron and hole masses, respectively;
+the Fermi level values.
+
+In the second dataset (containing additional information intended for expert
+users) the following properties are stored: Seebeck coefficient, electronic
+conductivity (divided by _τ_ ), and electronic thermal conductivity (divided
+by _τ_ ) for different temperatures as a function of the Fermi level (energy
+steps contained as values of the _mu_steps_ key); effective masses for
+different doping levels (n- and p-type) at 300 K; the values of the chemical
+potential corresponding to each doping level (n- and p-type); the Fermi level
+values.
+
+In both datasets, for the Seebeck coefficient, the electronic conductivity
+(divided by _τ_ ), and the electronic thermal conductivity (divided by _τ_ )
+both the full tensor and its eigenvalues, sorted in ascending order, are
+stored. For the effective mass, only the sorted (in ascending order)
+eigenvalues of the full tensor are stored. Regarding the Hall carrier
+concentration, only the averaged trace of the full Hall tensor is stored. We
+provide eigenvalues since they are invariant of the axis choice. They are
+therefore extremely useful to query. For instance, a search for high Seebeck
+materials would involve a query on the Seebeck eigenvalues. To facilitate
+queries, the eigenvalues are sorted by ascending order (the first eigenvalue
+being the smallest one). The anisotropy of a property can directly be assessed
+by the difference between the last and first eigenvalue. We stress that the
+provided eigenvalues are sorted in ascending order and do not contain any
+information about the corresponding principal directions. In order to obtain
+the correspondence between crystallographic directions and eigenvalues, we
+suggest to work on the full tensor (and the crystal structure information) and
+apply an algorithm finding eigenvalues and eigenvectors (see also Usage
+Notes). We also remind that the effective masses are reported only for
+semiconductor materials, namely compounds with a band gap higher than zero in
+GGA or GGA+U.
+
+### Graphical representation of results
+
+In Figs 2 and 3, we present some of the transport properties stored in the
+current database. In Fig. 2, we present the Seebeck coefficient as a function
+of the electrical conductivity (divided by _τ_ ), for all materials having a
+GGA band gap higher than 0.1 eV (around 25,000 compounds). Both properties are
+computed for 600 K and a doping level of 1020 cm−3. The diameter of the
+circles is used to indicate the band gap and the color to represent the power
+factor, _S_ 2 _σ_ (PF). The graph shows an almost symmetrical spread of points
+with respect to the x-axis. The two halves contain the two types of doping due
+to the opposite sign of the Seebeck coefficient. The color gradient shows a
+reasonable increasing trend toward values of Seebeck and conductivity that
+maximize the PF. It is evident, however, how difficult it is for materials to
+reach both high Seebeck and high conductivity at the same time, given the
+absence of points in that region. The distribution of points according to
+their size suggests that small band gap materials are concentrated in a range
+of Seebeck coefficient values lower than 200 _μ_ V/K. Above 200 _μ_ V/K is
+difficult to find any trend because of the overlapping of data points.
+
+ **Figure 2: Seebeck versus electron conductivity (divided by _τ_ ).**
+
+[![Figure 2](https://media.nature.com/m685/nature-
+assets/sdata/2017/sdata201785/images_hires/sdata201785-f2.jpg)](/articles/sdata201785/figures/2)
+
+The color represents the power factor ( _S_ 2 _σ_ ) and the pointsize is used
+for band gap. The reported values are averages over the three direction for
+T=600 K and n- and p-type doping level (Dop) of 1020 cm−3. Only materials with
+band gap higher than 0.1 eV in GGA are considered.
+
+[Full size image](/articles/sdata201785/figures/2)
+
+ **Figure 3: Electron contribution of the thermal conductivity versus electron
+conductivity: (both divided by _τ_ ).**
+
+[![Figure 3](https://media.nature.com/m685/nature-
+assets/sdata/2017/sdata201785/images_hires/sdata201785-f3.jpg)](/articles/sdata201785/figures/3)
+
+The values are averages over three direction for T=600 K. Only materials with
+band gap equal to zero eV in GGA are considered. The blue line represents the
+Wiedemann-Franz law that holds for metals.
+
+[Full size image](/articles/sdata201785/figures/3)
+
+In Fig. 3, we plot the electrical part of thermal conductivity as a function
+of the electrical conductivity (both divided by _τ_ ) for all metallic
+compounds (with a gap equal to zero in GGA) in the database (~18,000
+compounds). For such materials, the electronic contribution of the thermal
+conductivity can be related to the electrical conductivity and the temperature
+through the well known Wiedemann-Franz law: _κ_ _el_ / _σ_ = _LT_ , where _L_
+=2.4·10−8 WΩK−2 is the Lorenz number. This law is plotted as a blue line
+superimposed onto the set of points. The theoretical trend is followed quite
+well by our dataset, especially for those materials that are common metals
+with electronic conductivity in the range 1021−1022 (mΩs)−1.
+
+Experimental data for Seebeck, thermal and electrical conductivity stored in
+the MRL database of thermoelectric properties[75](/articles/sdata201785#ref75
+"Gaultois, M. W. et al. Data-driven review of thermoelectric materials:
+Performance and resource considerations. Chemistry of Materials 25, 2911–2920
+\(2013\)."),[76](/articles/sdata201785#ref76 "Mrl, material research
+laboratory. http://www.mrl.ucsb.edu:8080/datamine/about.jsp.") show very
+similar trends.
+
+## Technical Validation
+
+### Validation of interpolation precision
+
+Given that the initial uniform k-point grid of band structure might not be
+sufficient for a good interpolation of all band structures, we performed a
+post-process check before storing our data. The band structure along symmetry
+lines given by the interpolation are compared to the one explicitly computed
+with denser k-point grid which are reported in the Materials Project. This
+comparison has been implemented in pymatgen.
+
+The comparison is two-fold. First, we assess the correlation distance (as
+defined in scipy.spatial.distance.correlation class; basically 1− _ρ_ , where
+_ρ_ is the Pearson coefficient) between the two energy bands to determine if
+they behave similarly. Second, we evaluate their energy distance for each
+segment of high-symmetry path by means of a sum of absolute differences
+averaged over the number of k-points in each segment:
+Dik−path=1N∑k|εi,kBzt−εi,kDFT|, where εi,kBzt,εi,kDFT are the energies for the
+band _i_ in the k-point _k_ calculated by BoltzTraP and DFT, respectively. The
+output of this check is stored in a dictionary described in the Table 4. It
+mainly contains the correlation distance and the energy distance (for each
+segment and for the entire band) for the last (first) four valence
+(conduction) bands for non-metals or four bands above and four below the Fermi
+level for metals. For a quick screening, it also contains a warning flag (see
+‘acc_err’ key in Table 4), for both correlation distance and energy distance
+(for the entire band), set to _True_ when their average over the eight bands
+is higher then 0.03. According to this threshold, around 2.5% of GGA/GGA+U
+band structures have a warning on the correlation and 4% have a warning on the
+energy distance. The data with a warning on interpolation should be used with
+extreme caution.
+
+### Validation through comparison to experimental measurements
+
+In this section, we evaluate the level of agreement between calculated
+properties and the experimental counterpart. Several sources of disagreement
+can a priori be expected. First of all, we use a series of approximations
+including DFT, the neglect of temperature effect on the band structure and the
+constant relaxation time assumption. Numerical effects will also be present in
+terms of the k-point grid density or the accuracy of derivative close to band
+crossings although we expect those to be of smaller effect. Finally,
+experimental measurements are often performed on crystals that could have
+impurities or be polycrystalline.
+
+Keeping that in mind, we refer to a recent paper by Chen _et
+al._[23](/articles/sdata201785#ref23 "Chen, W. et al. Understanding
+thermoelectric properties from high-throughput calculations: trends, insights,
+and comparisons with experiment. J. Mater. Chem. C 4, 4414–4426 \(2016\).")
+where the Seebeck coefficient and electrical conductivities providing from a
+same approach using DFT and the constant relaxation time within BoltzTraP are
+compared with experimental measurements. We summarize here only the main
+outcomes of the comparison, and refer the reader to the original paper and its
+supplementary section for more details. The best agreement is by far obtained
+for the Seebeck coefficient. Mobilities and conductivities are more sensitive
+to the constant relaxation time approximation but general trends between
+materials are fairly reproduced. We should stress though that our dataset has
+not been corrected for the typical band gap error in DFT by a scissor
+operation.
+
+We finally compare our computed effective mass with experimental data. We only
+select direct measurements of effective mass through cyclotron resonance and
+Shubnikov-de Haas (SdH) effect. All the experimental data is obtained from the
+Landolt-Börnstein database[77](/articles/sdata201785#ref77 "Landolt-
+bornstein—group III condensed matter. http://materials.springer.com."). We
+take into account the anisotropy of the effective mass when needed and report
+each symmetrically different direction as a different data point. Our computed
+effective mass is obtained from the conductivity tensor and averages all the
+bands contributing to the transport. When compared to cyclotron and SdH
+measurements of individual bands, we need to average those individual band
+contributions. We do so by a weighted average following the given formula:
+(13)m¯12=m132⋅m1+m232⋅m2m132+m232, where the individual contributions are
+labeled with 1 and 2. The formula assumes parabolicity of the bands.
+
+In total we compare 33 effective masses. This is the largest comparison versus
+experiment to our knowledge. Figure 4 plots the experimental versus the
+theoretical effective mass obtained by our approach within GGA. The agreement
+is fairly good and the trends between large and small effective mass materials
+are well reproduced by DFT. The calculated Pearson and Spearman coefficients
+are equal to 0.93 and 0.91, respectively. This justifies the use of these DFT
+effective masses to screen for materials with low effective
+masses[27](/articles/sdata201785#ref27 "Hautier, G., Miglio, A., Ceder, G.,
+Rignanese, G.-M. & Gonze, X. Identification and design principles of low hole
+effective mass p-type transparent conducting oxides. Nature Communications 4,
+2292 \(2013\)."),[33](/articles/sdata201785#ref33 "Hautier, G., Miglio, A.,
+Waroquiers, D., Rignanese, G.-M. & Gonze, X. How does chemistry influence
+electron effective mass in oxides? a high-throughput computational analysis.
+Chemistry of Materials 26, 5447–5458 \(2014\)."). No difference in accuracy
+between electron and hole effective mass is noticeable. Most of the DFT
+effective masses underestimate the experimental data. This could come from
+either a systematic tendency for DFT along the underestimation of the band gap
+as well for the effect of large polaron present in experiments and not taken
+into account in our work.
+
+ **Figure 4: Comparison of effective mass values computed in this work with
+experimental values from ref.[77](/articles/sdata201785#ref77 "Landolt-
+bornstein—group III condensed matter. http://materials.springer.com.").**
+
+[![Figure 4](https://media.nature.com/m685/nature-
+assets/sdata/2017/sdata201785/images_hires/sdata201785-f4.jpg)](/articles/sdata201785/figures/4)
+
+Red and blue colors are used for n and p type materials, respectively. Circles
+represent the average effective mass values along the three directions.
+Squares, diamonds, and pentagons are used for effective mass values along x,
+y, and z directions respectively. Calculated Pearson and Spearman coefficents
+are equal to 0.93 and 0.91, respectively.
+
+[Full size image](/articles/sdata201785/figures/4)
+
+When comparing our results with experiments, one should keep in mind the
+systematic tendency for semilocal exchange-correlation functionals used within
+DFT to underestimate the band gap. While the band structure of semiconductors
+with smaller band gaps can still provides very useful transport properties,
+the closing of the band gap and the formation of a metallic compounds can lead
+to much larger deviations.
+
+## Usage Notes
+
+Our paper provides a dataset of transport properties on about 48,000 materials
+derived from DFT (GGA/GGA+U level) band structures and Boltzmann transport
+calculations within the constant relaxation time approximation. This type of
+data has already been used to give insights into fundamental materials
+properties in electronics, or thermoelectrics. While we warn the user to be
+always careful in the way this dataset is used (keeping in mind the limits of
+our approach), this database constitutes a powerful basis for materials search
+and data mining of materials transport properties.
+
+The meaning of the doping provided by BolzTraP and used in our dataset needs
+to be clarified. The doping level is not the total amount of carriers.
+(equation (10)) states that the doping concentration is the difference between
+the number of electrons per volume present in an undoped material and the
+number of electrons per volume at the given Fermi level. For a better
+understanding, we can rephrase it defining the doping concentration as the
+number of excess holes compared to the number of free electrons at the given
+Fermi level. It is more clear now that the doping concentration is positive
+for p-type doping, where there are many more holes than free electrons, and
+negative for n-type doping, where the opposite is true. We note that mobile
+carriers that are intrinsically generated, resulting in equal numbers of holes
+and free electrons, are not considered as part of the doping concentration.
+For example, metals and small gap materials may include a significant carrier
+concentration that is intrinsic and separate from the doping levels reported
+in this work. For such materials, the total carrier concentration can be
+directly obtained using for instance the Hall carrier concentration. We also
+remind the user to keep in mind that the Hall carrier concentration does not
+have to be the same than doping in general. This equality is only exact for
+parabolic bands when the semiconductor is highly
+degenerate[78](/articles/sdata201785#ref78 "May, A. F. & G. J. S. Introduction
+to Modeling Thermoelectric Transport at High Temperatures Vol. 1, Chap. 11
+\(CRC Press, 2012\)."). When comparing experimental and theoretical results,
+one should remember that the vast majority of the cases carrier concentration
+provided experimentally are Hall carrier concentration. Moreover, this
+definition of carrier concentration affects the assessment of the conductivity
+effective mass given by equation (11). Therefore we report the effective mass
+only for materials with an energy gap higher then zero in GGA or GGA+U and we
+advice the user to be careful using the effective mass for materials with an
+energy gap lower than 0.1 eV.
+
+As mentioned, we provide in the first dataset all the transport properties at
+fixed doping levels. If the value of a certain property at a different doping
+level is needed, it is possible for the user to use the second dataset
+providing properties in function of Fermi level. When a target doping is set,
+the user can find what Fermi level would provide this doping level at the
+required temperature and use the properties corresponding to this Fermi level
+and given temperature.
+
+In both datasets, we stored both the full tensor and its sorted (in ascending
+order) eigenvalues for the Seebeck coefficient, the electronic conductivity
+(divided by _τ_ ), and the electronic thermal conductivity (divided by _τ_ ).
+The eigenvalues (also sorted in ascending order) of the effective mass are
+also provided. In case the value of a property along a specific direction of
+the crystal is needed, the use of the full tensor and the structure are
+mandatory. It is also important to note that when a derived property is needed
+(e.g., the power factor _S_ 2 _σ_ ), it would be wrong to operate on
+eigenvalues (since they might not refer to corresponding directions).
+Therefore, we strongly suggest to instead perform the operations on the full
+tensors. Eigenvalues can be obtained by running an adequate algorithm on the
+resulting full tensor.
+
+## Additional Information
+
+ **How to cite this article:** Ricci, F. _et al._ An _ab initio_ electronic
+transport database for inorganic materials. _Sci. Data_ 4:170085 doi:
+10.1038/sdata.2017.85 (2017).
+
+ **Publisher’s note:** Springer Nature remains neutral with regard to
+jurisdictional claims in published maps and institutional affiliations.
+
+## References
+
+  1. 1.
+
+Ziman, J. _Principles of the Theory of Solids_. 2nd edn ( Cambridge University
+Press, 1972).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&author=Ziman%2CJ.&journal=Principles%20of%20the%20Theory%20of%20Solids&publication_year=1972)
+  2. 2.
+
+Nag, B. R. _Electron Transport in Compound Semiconductors_ ( Springer Verlag,
+1980).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&author=Nag%2CB.%20R&journal=Electron%20Transport%20in%20Compound%20Semiconductors&publication_year=1980)
+  3. 3.
+
+Scheidemantel, T. J., Ambrosch-Draxl, C., Thonhauser, T., Badding, J. V. &
+Sofo, J. O. Transport coefficients from first-principles calculations. _Phys.
+Rev. B_ **68** , 125210 (2003).
+
+    *       * [CAS](http://chemport.cas.org/cgi-bin/sdcgi?APP=ftslink&action=reflink&origin=npg&version=1.0&coi=1:CAS:528:DC%2BD3sXotVOmur0%3D&md5=3772949ad792b2979aec7153e8ecc2e8)
+      * [Article](https://doi.org/10.1103/PhysRevB.68.125210)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Transport%20coefficients%20from%20first-principles%20calculations&author=Scheidemantel%2CT.%20J.&author=Ambrosch-Draxl%2CC.&author=Thonhauser%2CT.&author=Badding%2CJ.%20V.&author=Sofo%2CJ.%20O.&journal=Phys.%20Rev.%20B&volume=68&publication_year=2003)
+  4. 4.
+
+Madsen, G. K. & Singh, D. J. Boltztrap. a code for calculating band-structure
+dependent quantities. _Computer Physics Communications_ **175** , 67–71
+(2006).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Boltztrap.%20a%20code%20for%20calculating%20band-structure%20dependent%20quantities&author=Madsen%2CG.%20K.&author=Singh%2CD.%20J.&journal=Computer%20Physics%20Communications&volume=175&pages=67-71&publication_year=2006)
+  5. 5.
+
+Curtarolo, S. _et al._ The high-throughput highway to computational materials
+design. _Nat Mater_ **12** , 191–201 (2013).
+
+    *       * [CAS](http://chemport.cas.org/cgi-bin/sdcgi?APP=ftslink&action=reflink&origin=npg&version=1.0&coi=1:CAS:528:DC%2BC3sXislWju7c%3D&md5=64fb651b50b1df19db86ab744fb7af38)
+      * [PubMed](http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?holding=npg&cmd=Retrieve&db=PubMed&list_uids=23422720&dopt=Abstract)
+      * [Article](https://doi.org/10.1038/nmat3568)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=The%20high-throughput%20highway%20to%20computational%20materials%20design&author=Curtarolo%2CS.&journal=Nat%20Mater&volume=12&pages=191-201&publication_year=2013)
+  6. 6.
+
+Greeley, J., Jaramillo, T. F., Bonde, J., Chorkendorff, I. & Norskov, J. K.
+Computational high-throughput screening of electrocatalytic materials for
+hydrogen evolution. _Nat Mater_ **5** , 909–913 (2006).
+
+    *       * [CAS](http://chemport.cas.org/cgi-bin/sdcgi?APP=ftslink&action=reflink&origin=npg&version=1.0&coi=1:CAS:528:DC%2BD28XhtFCqu73N&md5=98fd0673168d43a223f129f42a35a35e)
+      * [PubMed](http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?holding=npg&cmd=Retrieve&db=PubMed&list_uids=17041585&dopt=Abstract)
+      * [Article](https://doi.org/10.1038/nmat1752)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Computational%20high-throughput%20screening%20of%20electrocatalytic%20materials%20for%20hydrogen%20evolution&author=Greeley%2CJ.&author=Jaramillo%2CT.%20F.&author=Bonde%2CJ.&author=Chorkendorff%2CI.&author=Norskov%2CJ.%20K.&journal=Nat%20Mater&volume=5&pages=909-913&publication_year=2006)
+  7. 7.
+
+Bhattacharya, S., Chmielowski, R., Dennler, G. & Madsen, G. K. H. Novel
+ternary sulfide thermoelectric materials from high throughput transport and
+defect calculations. _J. Mater. Chem. A_ **4** , 11086–11093 (2016).
+
+    *       * [Article](https://doi.org/10.1039/C6TA04104C)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Novel%20ternary%20sulfide%20thermoelectric%20materials%20from%20high%20throughput%20transport%20and%20defect%20calculations&author=Bhattacharya%2CS.&author=Chmielowski%2CR.&author=Dennler%2CG.&author=Madsen%2CG.%20K.%20H.&journal=J.%20Mater.%20Chem.%20A&volume=4&pages=11086-11093&publication_year=2016)
+  8. 8.
+
+Hautier, G. _et al._ Novel mixed polyanions lithium-ion battery cathode
+materials predicted by high-throughput ab initio computations. _J. Mater.
+Chem._ **21** , 17147–17153 (2011).
+
+    *       * [CAS](http://chemport.cas.org/cgi-bin/sdcgi?APP=ftslink&action=reflink&origin=npg&version=1.0&coi=1:CAS:528:DC%2BC3MXhtlKgtLrI&md5=dfaa5ab0e8f02eeb69eec6b0c8d26851)
+      * [Article](https://doi.org/10.1039/c1jm12216a)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Novel%20mixed%20polyanions%20lithium-ion%20battery%20cathode%20materials%20predicted%20by%20high-throughput%20ab%20initio%20computations&author=Hautier%2CG.&journal=J.%20Mater.%20Chem.&volume=21&pages=17147-17153&publication_year=2011)
+  9. 9.
+
+Jain, A., Shin, Y. & Persson, K. A. Computational predictions of energy
+materials using density functional theory. _Nature Reviews Materials_ **1** ,
+15004 (2016).
+
+    *       * [Article](https://doi.org/10.1038/natrevmats.2015.4)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Computational%20predictions%20of%20energy%20materials%20using%20density%20functional%20theory&author=Jain%2CA.&author=Shin%2CY.&author=Persson%2CK.%20A.&journal=Nature%20Reviews%20Materials&volume=1&publication_year=2016)
+  10. 10.
+
+Hautier, G., Jain, A. & Ong, S. P. From the computer to the laboratory:
+materials discovery and design using first-principles calculations. _Journal
+of Materials Science_ **47** , 7317–7340 (2012).
+
+    *       * [Article](https://doi.org/10.1007/s10853-012-6424-0)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=From%20the%20computer%20to%20the%20laboratory%3A%20materials%20discovery%20and%20design%20using%20first-principles%20calculations&author=Hautier%2CG.&author=Jain%2CA.&author=Ong%2CS.%20P.&journal=Journal%20of%20Materials%20Science&volume=47&pages=7317-7340&publication_year=2012)
+  11. 11.
+
+Carrete, J., Li, W., Mingo, N., Wang, S. & Curtarolo, S. Finding
+unprecedentedly low-thermal-conductivity half-heusler semiconductors via high-
+throughput materials modeling. _Phys. Rev. X_ **4** , 011019 (2014).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Finding%20unprecedentedly%20low-thermal-conductivity%20half-heusler%20semiconductors%20via%20high-throughput%20materials%20modeling&author=Carrete%2CJ.&author=Li%2CW.&author=Mingo%2CN.&author=Wang%2CS.&author=Curtarolo%2CS.&journal=Phys.%20Rev.%20X&volume=4&publication_year=2014)
+  12. 12.
+
+Hautier, G. _et al._ Phosphates as lithium-ion battery cathodes: An evaluation
+based on high-throughput ab initio calculations. _Chemistry of Materials_
+**23** , 3495–3508 (2011).
+
+    *       * [CAS](http://chemport.cas.org/cgi-bin/sdcgi?APP=ftslink&action=reflink&origin=npg&version=1.0&coi=1:CAS:528:DC%2BC3MXovVKrur0%3D&md5=c7cbad501145165beace1162984acf01)
+      * [Article](https://doi.org/10.1021/cm200949v)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Phosphates%20as%20lithium-ion%20battery%20cathodes%3A%20An%20evaluation%20based%20on%20high-throughput%20ab%20initio%20calculations&author=Hautier%2CG.&journal=Chemistry%20of%20Materials&volume=23&pages=3495-3508&publication_year=2011)
+  13. 13.
+
+Jain, A., Hautier, G., Ong, S. P. & Persson, K. New opportunities for
+materials informatics: Resources and data mining techniques for uncovering
+hidden relationships. _Journal of Materials Research_ **31** , 977–994 (2016).
+
+    *       * [Article](https://doi.org/10.1557/jmr.2016.80)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=New%20opportunities%20for%20materials%20informatics%3A%20Resources%20and%20data%20mining%20techniques%20for%20uncovering%20hidden%20relationships&author=Jain%2CA.&author=Hautier%2CG.&author=Ong%2CS.%20P.&author=Persson%2CK.&journal=Journal%20of%20Materials%20Research&volume=31&pages=977-994&publication_year=2016)
+  14. 14.
+
+Jain, A., Hautier, G., Ong, S. P., Dacek, S. & Ceder, G. Relating voltage and
+thermal safety in li-ion battery cathodes: a high-throughput computational
+study. _Phys. Chem. Chem. Phys._ **17** , 5942–5953 (2015).
+
+    *       * [CAS](http://chemport.cas.org/cgi-bin/sdcgi?APP=ftslink&action=reflink&origin=npg&version=1.0&coi=1:CAS:528:DC%2BC2MXhvVCit70%3D&md5=52b34a2b6a6a50fa08e14e56c628483d)
+      * [PubMed](http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?holding=npg&cmd=Retrieve&db=PubMed&list_uids=25636088&dopt=Abstract)
+      * [Article](https://doi.org/10.1039/C5CP00250H)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Relating%20voltage%20and%20thermal%20safety%20in%20li-ion%20battery%20cathodes%3A%20a%20high-throughput%20computational%20study&author=Jain%2CA.&author=Hautier%2CG.&author=Ong%2CS.%20P.&author=Dacek%2CS.&author=Ceder%2CG.&journal=Phys.%20Chem.%20Chem.%20Phys.&volume=17&pages=5942-5953&publication_year=2015)
+  15. 15.
+
+Jain, A., Persson, K. A. & Ceder, G. Research update: The materials genome
+initiative: Data sharing and the impact of collaborative ab initio databases.
+_APL Mater_ **4** , 053102 (2016).
+
+    *       * [Article](https://doi.org/10.1063/1.4944683)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Research%20update%3A%20The%20materials%20genome%20initiative%3A%20Data%20sharing%20and%20the%20impact%20of%20collaborative%20ab%20initio%20databases&author=Jain%2CA.&author=Persson%2CK.%20A.&author=Ceder%2CG.&journal=APL%20Mater&volume=4&publication_year=2016)
+  16. 16.
+
+The materials project. <https://materialsproject.org/>.
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?)
+  17. 17.
+
+Jain, A. _et al._ Commentary: The materials project: A materials genome
+approach to accelerating materials innovation. _APL Mater_ **1** , 011002
+(2013).
+
+    *       * [CAS](http://chemport.cas.org/cgi-bin/sdcgi?APP=ftslink&action=reflink&origin=npg&version=1.0&coi=1:CAS:528:DC%2BC3sXhtlyktLjF&md5=ee10ac33d4d121aea486acd0cd559c70)
+      * [Article](https://doi.org/10.1063/1.4812323)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Commentary%3A%20The%20materials%20project%3A%20A%20materials%20genome%20approach%20to%20accelerating%20materials%20innovation&author=Jain%2CA.&journal=APL%20Mater&volume=1&publication_year=2013)
+  18. 18.
+
+Saal, J. E., Kirklin, S., Aykol, M., Meredig, B. & Wolverton, C. Materials
+design and discovery with high-throughput density functional theory: The open
+quantum materials database (oqmd). _JOM_ **65** , 1501–1509 (2013).
+
+    *       * [CAS](http://chemport.cas.org/cgi-bin/sdcgi?APP=ftslink&action=reflink&origin=npg&version=1.0&coi=1:CAS:528:DC%2BC3sXhsFentbzK&md5=f38eaf0d8f1b9a6b10829adfca3bc741)
+      * [Article](https://doi.org/10.1007/s11837-013-0755-4)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Materials%20design%20and%20discovery%20with%20high-throughput%20density%20functional%20theory%3A%20The%20open%20quantum%20materials%20database%20\(oqmd\)&author=Saal%2CJ.%20E.&author=Kirklin%2CS.&author=Aykol%2CM.&author=Meredig%2CB.&author=Wolverton%2CC.&journal=JOM&volume=65&pages=1501-1509&publication_year=2013)
+  19. 19.
+
+Setyawan, W. & Curtarolo, S. High-throughput electronic band structure
+calculations: Challenges and tools. _Computational Materials Science_ **49** ,
+299–312 (2010).
+
+    *       * [Article](https://doi.org/10.1016/j.commatsci.2010.05.010)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=High-throughput%20electronic%20band%20structure%20calculations%3A%20Challenges%20and%20tools&author=Setyawan%2CW.&author=Curtarolo%2CS.&journal=Computational%20Materials%20Science&volume=49&pages=299-312&publication_year=2010)
+  20. 20.
+
+Nomad repository. <http://nomad-repository.eu>.
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?)
+  21. 21.
+
+Hachmann, J. _et al._ The harvard clean energy project: Large-scale
+computational screening and design of organic photovoltaics on the world
+community grid. _The Journal of Physical Chemistry Letters_ **2** , 2241–2251
+(2011).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=The%20harvard%20clean%20energy%20project%3A%20Large-scale%20computational%20screening%20and%20design%20of%20organic%20photovoltaics%20on%20the%20world%20community%20grid&author=Hachmann%2CJ.&journal=The%20Journal%20of%20Physical%20Chemistry%20Letters&volume=2&pages=2241-2251&publication_year=2011)
+  22. 22.
+
+Madsen, G. K. H. Automated search for new thermoelectric materials: The case
+of liznsb. _Journal of the American Chemical Society_ **128** , 12140–12146
+(2006).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Automated%20search%20for%20new%20thermoelectric%20materials%3A%20The%20case%20of%20liznsb&author=Madsen%2CG.%20K.%20H.&journal=Journal%20of%20the%20American%20Chemical%20Society&volume=128&pages=12140-12146&publication_year=2006)
+  23. 23.
+
+Chen, W. _et al._ Understanding thermoelectric properties from high-throughput
+calculations: trends, insights, and comparisons with experiment. _J. Mater.
+Chem. C_ **4** , 4414–4426 (2016).
+
+    *       * [Article](https://doi.org/10.1039/C5TC04339E)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Understanding%20thermoelectric%20properties%20from%20high-throughput%20calculations%3A%20trends%2C%20insights%2C%20and%20comparisons%20with%20experiment&author=Chen%2CW.&journal=J.%20Mater.%20Chem.%20C&volume=4&pages=4414-4426&publication_year=2016)
+  24. 24.
+
+Bhattacharya, S. & Madsen, G. K. H. High-throughput exploration of alloying as
+design strategy for thermoelectrics. _Phys. Rev. B_ **92** , 085205 (2015).
+
+    *       * [CAS](http://chemport.cas.org/cgi-bin/sdcgi?APP=ftslink&action=reflink&origin=npg&version=1.0&coi=1:CAS:528:DC%2BC28XivVOmsrg%3D&md5=2576d7a37e714dd9ffdbac52d3a0272f)
+      * [Article](https://doi.org/10.1103/PhysRevB.92.085205)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=High-throughput%20exploration%20of%20alloying%20as%20design%20strategy%20for%20thermoelectrics&author=Bhattacharya%2CS.&author=Madsen%2CG.%20K.%20H.&journal=Phys.%20Rev.%20B&volume=92&publication_year=2015)
+  25. 25.
+
+Zhang, J. _et al._ Designing high-performance layered thermoelectric materials
+through orbital engineering. _Nature Communications_ **7** , 10892 (2016).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Designing%20high-performance%20layered%20thermoelectric%20materials%20through%20orbital%20engineering&author=Zhang%2CJ.&journal=Nature%20Communications&volume=7&publication_year=2016)
+  26. 26.
+
+Opahle, I., Parma, A., McEniry, E. J., Drautz, R. & Madsen, G. K. High-
+throughput study of the structural stability and thermoelectric properties of
+transition metal silicides. _New Journal of Physics_ **15** , 105010 (2013).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=High-throughput%20study%20of%20the%20structural%20stability%20and%20thermoelectric%20properties%20of%20transition%20metal%20silicides&author=Opahle%2CI.&author=Parma%2CA.&author=McEniry%2CE.%20J.&author=Drautz%2CR.&author=Madsen%2CG.%20K.&journal=New%20Journal%20of%20Physics&volume=15&publication_year=2013)
+  27. 27.
+
+Hautier, G., Miglio, A., Ceder, G., Rignanese, G.-M. & Gonze, X.
+Identification and design principles of low hole effective mass p-type
+transparent conducting oxides. _Nature Communications_ **4** , 2292 (2013).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Identification%20and%20design%20principles%20of%20low%20hole%20effective%20mass%20p-type%20transparent%20conducting%20oxides&author=Hautier%2CG.&author=Miglio%2CA.&author=Ceder%2CG.&author=Rignanese%2CG.-M.&author=Gonze%2CX.&journal=Nature%20Communications&volume=4&publication_year=2013)
+  28. 28.
+
+Gibbs, Z. M. _et al._ Effective mass and fermi surface complexity factor from
+ab initio band structure calculations. _npj Computational Materials_ **3** , 8
+(2017).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Effective%20mass%20and%20fermi%20surface%20complexity%20factor%20from%20ab%20initio%20band%20structure%20calculations&author=Gibbs%2CZ.%20M.&journal=npj%20Computational%20Materials&volume=3&publication_year=2017)
+  29. 29.
+
+de Jong, M. _et al._ Charting the complete elastic properties of inorganic
+crystalline compounds. _Scientific Data_ **2** , 150009 (2015).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Charting%20the%20complete%20elastic%20properties%20of%20inorganic%20crystalline%20compounds&author=de%20Jong%2CM.&journal=Scientific%20Data&volume=2&publication_year=2015)
+  30. 30.
+
+de Jong, M., Chen, W., Geerlings, H., Asta, M. & Persson, K. A. A database to
+enable discovery and design of piezoelectric materials. _Scientific Data_
+**2** , 150053 (2015).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=A%20database%20to%20enable%20discovery%20and%20design%20of%20piezoelectric%20materials&author=de%20Jong%2CM.&author=Chen%2CW.&author=Geerlings%2CH.&author=Asta%2CM.&author=Persson%2CK.%20A.&journal=Scientific%20Data&volume=2&publication_year=2015)
+  31. 31.
+
+Hurd, C.. _The Hall Effect in Metals and Alloys_ ( Springer US, 1972).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&author=Hurd%2CC.&journal=The%20Hall%20Effect%20in%20Metals%20and%20Alloys&publication_year=1972)
+  32. 32.
+
+Laflamme Janssen, J. _et al._ Precise effective masses from density functional
+perturbation theory. _Phys. Rev. B_ **93** , 205147 (2016).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Precise%20effective%20masses%20from%20density%20functional%20perturbation%20theory&author=Laflamme%20Janssen%2CJ.&journal=Phys.%20Rev.%20B&volume=93&publication_year=2016)
+  33. 33.
+
+Hautier, G., Miglio, A., Waroquiers, D., Rignanese, G.-M. & Gonze, X. How does
+chemistry influence electron effective mass in oxides? a high-throughput
+computational analysis. _Chemistry of Materials_ **26** , 5447–5458 (2014).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=How%20does%20chemistry%20influence%20electron%20effective%20mass%20in%20oxides%3F%20a%20high-throughput%20computational%20analysis&author=Hautier%2CG.&author=Miglio%2CA.&author=Waroquiers%2CD.&author=Rignanese%2CG.-M.&author=Gonze%2CX.&journal=Chemistry%20of%20Materials&volume=26&pages=5447-5458&publication_year=2014)
+  34. 34.
+
+Bhatia, A. _et al._ High-mobility bismuth-based transparent p-type oxide from
+high-throughput material screening. _Chemistry of Materials_ **28** , 30–34
+(2016).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=High-mobility%20bismuth-based%20transparent%20p-type%20oxide%20from%20high-throughput%20material%20screening&author=Bhatia%2CA.&journal=Chemistry%20of%20Materials&volume=28&pages=30-34&publication_year=2016)
+  35. 35.
+
+Varley, J. B. _et al._ High-throughput design of non-oxide p-type transparent
+conducting materials: Data mining, search strategy, and identification of
+boron phosphide. _Chemistry of Materials_ **29** , 2568–2573 (2017).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=High-throughput%20design%20of%20non-oxide%20p-type%20transparent%20conducting%20materials%3A%20Data%20mining%2C%20search%20strategy%2C%20and%20identification%20of%20boron%20phosphide&author=Varley%2CJ.%20B.&journal=Chemistry%20of%20Materials&volume=29&pages=2568-2573&publication_year=2017)
+  36. 36.
+
+Shankland, D. G. _Computational Methods in Band Theory_ , 362 (Plenum, 1971).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&author=Shankland%2CD.%20G&journal=Computational%20Methods%20in%20Band%20Theory&publication_year=1971)
+  37. 37.
+
+Koelling, D. & Wood, J. On the interpolation of eigenvalues and a resultant
+integration scheme. _Journal of Computational Physics_ **67** , 253–262
+(1986).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=On%20the%20interpolation%20of%20eigenvalues%20and%20a%20resultant%20integration%20scheme&author=Koelling%2CD.&author=Wood%2CJ.&journal=Journal%20of%20Computational%20Physics&volume=67&pages=253-262&publication_year=1986)
+  38. 38.
+
+Pickett, W. E., Krakauer, H. & Allen, P. B. Smooth fourier interpolation of
+periodic functions. _Phys. Rev. B_ **38** , 2721–2726 (1988).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Smooth%20fourier%20interpolation%20of%20periodic%20functions&author=Pickett%2CW.%20E.&author=Krakauer%2CH.&author=Allen%2CP.%20B.&journal=Phys.%20Rev.%20B&volume=38&pages=2721-2726&publication_year=1988)
+  39. 39.
+
+Allen, P. B., Pickett, W. E. & Krakauer, H. Anisotropic normal-state transport
+properties predicted and analyzed for high- _T_ _c_ oxide superconductors.
+_Phys. Rev. B_ **37** , 7482–7490 (1988).
+
+    *       * [CAS](http://chemport.cas.org/cgi-bin/sdcgi?APP=ftslink&action=reflink&origin=npg&version=1.0&coi=1:CAS:528:DyaL1cXltVakurw%3D&md5=dbd5461d74f21f9a610a8f5b78f105d1)
+      * [Article](https://doi.org/10.1103/PhysRevB.37.7482)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Anisotropic%20normal-state%20transport%20properties%20predicted%20and%20analyzed%20for%20high-Tc%20oxide%20superconductors&author=Allen%2CP.%20B.&author=Pickett%2CW.%20E.&author=Krakauer%2CH.&journal=Phys.%20Rev.%20B&volume=37&pages=7482-7490&publication_year=1988)
+  40. 40.
+
+Singh, D. J. & Mazin, I. I. Calculated thermoelectric properties of la-filled
+skutterudites. _Phys. Rev. B_ **56** , R1650–R1653 (1997).
+
+    *       * [CAS](http://chemport.cas.org/cgi-bin/sdcgi?APP=ftslink&action=reflink&origin=npg&version=1.0&coi=1:CAS:528:DyaK2sXkvFCrsbk%3D&md5=5e811c6e5e799c47be0c70b7efca8cd7)
+      * [Article](https://doi.org/10.1103/PhysRevB.56.R1650)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Calculated%20thermoelectric%20properties%20of%20la-filled%20skutterudites&author=Singh%2CD.%20J.&author=Mazin%2CI.%20I.&journal=Phys.%20Rev.%20B&volume=56&pages=R1650-R1653&publication_year=1997)
+  41. 41.
+
+Zhu, H., Sun, W., Armiento, R., Lazic, P. & Ceder, G. Band structure
+engineering through orbital interaction for enhanced thermoelectric power
+factor. _Applied Physics Letters_ **104** , 082107 (2014).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Band%20structure%20engineering%20through%20orbital%20interaction%20for%20enhanced%20thermoelectric%20power%20factor&author=Zhu%2CH.&author=Sun%2CW.&author=Armiento%2CR.&author=Lazic%2CP.&author=Ceder%2CG.&journal=Applied%20Physics%20Letters&volume=104&publication_year=2014)
+  42. 42.
+
+Ong, K. P., Singh, D. J. & Wu, P. Analysis of the thermoelectric properties of
+_n_ -type zno. _Phys. Rev. B_ **83** , 115110 (2011).
+
+    *       * [CAS](http://chemport.cas.org/cgi-bin/sdcgi?APP=ftslink&action=reflink&origin=npg&version=1.0&coi=1:CAS:528:DC%2BC3MXkt1Kgu70%3D&md5=75d16419c97a9a99a5287d69438f8262)
+      * [Article](https://doi.org/10.1103/PhysRevB.83.115110)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Analysis%20of%20the%20thermoelectric%20properties%20of%20n-type%20zno&author=Ong%2CK.%20P.&author=Singh%2CD.%20J.&author=Wu%2CP.&journal=Phys.%20Rev.%20B&volume=83&publication_year=2011)
+  43. 43.
+
+Zhu, H. _et al._ Computational and experimental investigation of TmAgTe2 and
+XYZ2 compounds, a new group of thermoelectric materials identified by first-
+principles high-throughput screening. _J. Mater. Chem. C_ **3** , 10554–10565
+(2015).
+
+    *       * [Article](https://doi.org/10.1039/C5TC01440A)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Computational%20and%20experimental%20investigation%20of%20TmAgTe2%20and%20XYZ2%20compounds%2C%20a%20new%20group%20of%20thermoelectric%20materials%20identified%20by%20first-principles%20high-throughput%20screening&author=Zhu%2CH.&journal=J.%20Mater.%20Chem.%20C&volume=3&pages=10554-10565&publication_year=2015)
+  44. 44.
+
+Aydemir, U. _et al._ YCuTe2: a member of a new class of thermoelectric
+materials with CuTe4-based layered structure. _J. Mater. Chem. A_ **4** ,
+2461–2472 (2016).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=YCuTe2%3A%20a%20member%20of%20a%20new%20class%20of%20thermoelectric%20materials%20with%20CuTe4-based%20layered%20structure&author=Aydemir%2CU.&journal=J.%20Mater.%20Chem.%20A&volume=4&pages=2461-2472&publication_year=2016)
+  45. 45.
+
+Madsen, G. K. H., Schwarz, K., Blaha, P. & Singh, D. J. Electronic structure
+and transport in type-I and type-VIII clathrates containing strontium, barium,
+and europium. _Phys. Rev. B_ **68** , 125212 (2003).
+
+    *       * [CAS](http://chemport.cas.org/cgi-bin/sdcgi?APP=ftslink&action=reflink&origin=npg&version=1.0&coi=1:CAS:528:DC%2BD3sXotVOlsrc%3D&md5=9def6ce7682f7601d6c700709518eb7d)
+      * [Article](https://doi.org/10.1103/PhysRevB.68.125212)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Electronic%20structure%20and%20transport%20in%20type-I%20and%20type-VIII%20clathrates%20containing%20strontium%2C%20barium%2C%20and%20europium&author=Madsen%2CG.%20K.%20H.&author=Schwarz%2CK.&author=Blaha%2CP.&author=Singh%2CD.%20J.&journal=Phys.%20Rev.%20B&volume=68&publication_year=2003)
+  46. 46.
+
+Bentien, A., Pacheco, V., Paschen, S., Grin, Y. & Steglich, F. Transport
+properties of composition tuned _α_ \- and _β_ -Eu8Ga16− _x_ Ge30+ _x_. _Phys.
+Rev. B_ **71** , 165206 (2005).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Transport%20properties%20of%20composition%20tuned%20%CE%B1-%20and%20%CE%B2-Eu8Ga16%E2%88%92xGe30%2Bx&author=Bentien%2CA.&author=Pacheco%2CV.&author=Paschen%2CS.&author=Grin%2CY.&author=Steglich%2CF.&journal=Phys.%20Rev.%20B&volume=71&publication_year=2005)
+  47. 47.
+
+Pacheco, V. _et al._ Relationship between composition and charge carrier
+concentration in Eu8Ga16− _x_ Ge30+ _x_ clathrates. _Phys. Rev. B_ **71** ,
+165205 (2005).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Relationship%20between%20composition%20and%20charge%20carrier%20concentration%20in%20Eu8Ga16%E2%88%92xGe30%2Bx%20clathrates&author=Pacheco%2CV.&journal=Phys.%20Rev.%20B&volume=71&publication_year=2005)
+  48. 48.
+
+Pizzi, G., Volja, D., Kozinsky, B., Fornari, M. & Marzari, N. Boltzwann: A
+code for the evaluation of thermoelectric and electronic transport properties
+with a maximally-localized wannier functions basis. _Computer Physics
+Communications_ **185** , 422–429 (2014).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Boltzwann%3A%20A%20code%20for%20the%20evaluation%20of%20thermoelectric%20and%20electronic%20transport%20properties%20with%20a%20maximally-localized%20wannier%20functions%20basis&author=Pizzi%2CG.&author=Volja%2CD.&author=Kozinsky%2CB.&author=Fornari%2CM.&author=Marzari%2CN.&journal=Computer%20Physics%20Communications&volume=185&pages=422-429&publication_year=2014)
+  49. 49.
+
+Marzari, N. & Vanderbilt, D. Maximally localized generalized wannier functions
+for composite energy bands. _Phys. Rev. B_ **56** , 12847–12865 (1997).
+
+    *       * [CAS](http://chemport.cas.org/cgi-bin/sdcgi?APP=ftslink&action=reflink&origin=npg&version=1.0&coi=1:CAS:528:DyaK2sXnsFegtLY%3D&md5=fafd92219946df5b613343e75737a22d)
+      * [Article](https://doi.org/10.1103/PhysRevB.56.12847)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Maximally%20localized%20generalized%20wannier%20functions%20for%20composite%20energy%20bands&author=Marzari%2CN.&author=Vanderbilt%2CD.&journal=Phys.%20Rev.%20B&volume=56&pages=12847-12865&publication_year=1997)
+  50. 50.
+
+Mustafa, J. I., Coh, S., Cohen, M. L. & Louie, S. G. Automated construction of
+maximally localized wannier functions: Optimized projection functions method.
+_Phys. Rev. B_ **92** , 165134 (2015).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Automated%20construction%20of%20maximally%20localized%20wannier%20functions%3A%20Optimized%20projection%20functions%20method&author=Mustafa%2CJ.%20I.&author=Coh%2CS.&author=Cohen%2CM.%20L.&author=Louie%2CS.%20G.&journal=Phys.%20Rev.%20B&volume=92&publication_year=2015)
+  51. 51.
+
+Jain, A. _et al._ A high-throughput infrastructure for density functional
+theory calculations. _Computational Materials Science_ **50** , 2295–2310
+(2011).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=A%20high-throughput%20infrastructure%20for%20density%20functional%20theory%20calculations&author=Jain%2CA.&journal=Computational%20Materials%20Science&volume=50&pages=2295-2310&publication_year=2011)
+  52. 52.
+
+The materials project wiki page.
+<http://materialsproject.org/wiki/index.php/Calculations_Wiki>.
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?)
+  53. 53.
+
+Kresse, G. & Hafner, J. _Ab initio_ molecular dynamics for liquid metals.
+_Phys. Rev. B_ **47** , 558–561 (1993).
+
+    *       * [CAS](http://chemport.cas.org/cgi-bin/sdcgi?APP=ftslink&action=reflink&origin=npg&version=1.0&coi=1:CAS:528:DyaK3sXlt1Gnsr0%3D&md5=df02d672f5c05f500fe501675821f460)
+      * [Article](https://doi.org/10.1103/PhysRevB.47.558)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Ab%20initio%20molecular%20dynamics%20for%20liquid%20metals&author=Kresse%2CG.&author=Hafner%2CJ.&journal=Phys.%20Rev.%20B&volume=47&pages=558-561&publication_year=1993)
+  54. 54.
+
+Kresse, G. & Furthmüller, J. Efficient iterative schemes for _ab initio_
+total-energy calculations using a plane-wave basis set. _Phys. Rev. B_ **54**
+, 11169–11186 (1996).
+
+    *       * [CAS](http://chemport.cas.org/cgi-bin/sdcgi?APP=ftslink&action=reflink&origin=npg&version=1.0&coi=1:CAS:528:DyaK28Xms1Whu7Y%3D&md5=8b32cde52bf64f83fb20b92f3758a6c5)
+      * [Article](https://doi.org/10.1103/PhysRevB.54.11169)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Efficient%20iterative%20schemes%20for%20ab%20initio%20total-energy%20calculations%20using%20a%20plane-wave%20basis%20set&author=Kresse%2CG.&author=Furthm%C3%BCller%2CJ.&journal=Phys.%20Rev.%20B&volume=54&pages=11169-11186&publication_year=1996)
+  55. 55.
+
+Perdew, J. P., Burke, K. & Ernzerhof, M. Generalized gradient approximation
+made simple. _Phys. Rev. Lett._ **77** , 3865–3868 (1996).
+
+    *       * [CAS](http://chemport.cas.org/cgi-bin/sdcgi?APP=ftslink&action=reflink&origin=npg&version=1.0&coi=1:CAS:528:DyaK28XmsVCgsbs%3D&md5=af75e50e0a6ceefdad4df9481ff47822)
+      * [PubMed](http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?holding=npg&cmd=Retrieve&db=PubMed&list_uids=10062328&dopt=Abstract)
+      * [Article](https://doi.org/10.1103/PhysRevLett.77.3865)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Generalized%20gradient%20approximation%20made%20simple&author=Perdew%2CJ.%20P.&author=Burke%2CK.&author=Ernzerhof%2CM.&journal=Phys.%20Rev.%20Lett.&volume=77&pages=3865-3868&publication_year=1996)
+  56. 56.
+
+Blöchl, P. E. Projector augmented-wave method. _Phys. Rev. B_ **50** ,
+17953–17979 (1994).
+
+    *       * [CAS](http://chemport.cas.org/cgi-bin/sdcgi?APP=ftslink&action=reflink&origin=npg&version=1.0&coi=1:CAS:528:DyaK2MXivFKisLk%3D&md5=edf75f47d7ee4fcb51b42838af3bfc75)
+      * [Article](https://doi.org/10.1103/PhysRevB.50.17953)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Projector%20augmented-wave%20method&author=Bl%C3%B6chl%2CP.%20E.&journal=Phys.%20Rev.%20B&volume=50&pages=17953-17979&publication_year=1994)
+  57. 57.
+
+Kresse, G. & Joubert, D. From ultrasoft pseudopotentials to the projector
+augmented-wave method. _Phys. Rev. B_ **59** , 1758–1775 (1999).
+
+    *       * [CAS](http://chemport.cas.org/cgi-bin/sdcgi?APP=ftslink&action=reflink&origin=npg&version=1.0&coi=1:CAS:528:DyaK1MXkt12nug%3D%3D&md5=3c1af62431ef70abef4c5bd3e78b8553)
+      * [Article](https://doi.org/10.1103/PhysRevB.59.1758)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=From%20ultrasoft%20pseudopotentials%20to%20the%20projector%20augmented-wave%20method&author=Kresse%2CG.&author=Joubert%2CD.&journal=Phys.%20Rev.%20B&volume=59&pages=1758-1775&publication_year=1999)
+  58. 58.
+
+Anisimov, V. I., Zaanen, J. & Andersen, O. K. Band theory and mott insulators:
+Hubbard _U_ instead of stoner _I_. _Phys. Rev. B_ **44** , 943–954 (1991).
+
+    *       * [CAS](http://chemport.cas.org/cgi-bin/sdcgi?APP=ftslink&action=reflink&origin=npg&version=1.0&coi=1:CAS:528:DyaK3MXkvVaqsLs%3D&md5=ef8ad954e82f31ab58ab3f33662b8d3f)
+      * [Article](https://doi.org/10.1103/PhysRevB.44.943)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Band%20theory%20and%20mott%20insulators%3A%20Hubbard%20U%20instead%20of%20stoner%20I&author=Anisimov%2CV.%20I.&author=Zaanen%2CJ.&author=Andersen%2CO.%20K.&journal=Phys.%20Rev.%20B&volume=44&pages=943-954&publication_year=1991)
+  59. 59.
+
+Dudarev, S. L., Botton, G. A., Savrasov, S. Y., Humphreys, C. J. & Sutton, A.
+P. Electron-energy-loss spectra and the structural stability of nickel oxide:
+An lsda+u study. _Phys. Rev. B_ **57** , 1505–1509 (1998).
+
+    *       * [CAS](http://chemport.cas.org/cgi-bin/sdcgi?APP=ftslink&action=reflink&origin=npg&version=1.0&coi=1:CAS:528:DyaK1cXlsVarsQ%3D%3D&md5=7b5de5cad5fbb78df753484c61c11420)
+      * [Article](https://doi.org/10.1103/PhysRevB.57.1505)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Electron-energy-loss%20spectra%20and%20the%20structural%20stability%20of%20nickel%20oxide%3A%20An%20lsda%2Bu%20study&author=Dudarev%2CS.%20L.&author=Botton%2CG.%20A.&author=Savrasov%2CS.%20Y.&author=Humphreys%2CC.%20J.&author=Sutton%2CA.%20P.&journal=Phys.%20Rev.%20B&volume=57&pages=1505-1509&publication_year=1998)
+  60. 60.
+
+Belsky, A., Hellenbrandt, M., Karen, V. L. & Luksch, P. New developments in
+the Inorganic Crystal Structure Database (ICSD): accessibility in support of
+materials research and design. _Acta Crystallographica Section B_ **58** ,
+364–369 (2002).
+
+    *       * [Article](https://doi.org/10.1107/S0108768102006948)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=New%20developments%20in%20the%20Inorganic%20Crystal%20Structure%20Database%20\(ICSD\)%3A%20accessibility%20in%20support%20of%20materials%20research%20and%20design&author=Belsky%2CA.&author=Hellenbrandt%2CM.&author=Karen%2CV.%20L.&author=Luksch%2CP.&journal=Acta%20Crystallographica%20Section%20B&volume=58&pages=364-369&publication_year=2002)
+  61. 61.
+
+Bergerhoff, G., Hundt, R., Sievers, R. & Brown, I. D. The inorganic crystal
+structure data base. _Journal of Chemical Information and Computer Sciences_
+**23** , 66–69 (1983).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=The%20inorganic%20crystal%20structure%20data%20base&author=Bergerhoff%2CG.&author=Hundt%2CR.&author=Sievers%2CR.&author=Brown%2CI.%20D.&journal=Journal%20of%20Chemical%20Information%20and%20Computer%20Sciences&volume=23&pages=66-69&publication_year=1983)
+  62. 62.
+
+Mahan, G. D. _Intern. Tables for Crystall. D_ **Vol. 1** , Chap. 8 220–227
+(Cambridge University Press, 2006).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&author=Mahan%2CG.%20D&journal=Intern.%20Tables%20for%20Crystall.%20D&volume=Vol.%201&pages=220-227&publication_year=2006)
+  63. 63.
+
+Delugas, P. _et al._ Doping-induced dimensional crossover and thermopower
+burst in nb-doped srtio3 superlattices. _Phys. Rev. B_ **88** , 045310 (2013).
+
+    *       * [CAS](http://chemport.cas.org/cgi-bin/sdcgi?APP=ftslink&action=reflink&origin=npg&version=1.0&coi=1:CAS:528:DC%2BC3sXhtl2lsb3F&md5=85c50f699ed47118cc8619cc8ec1d502)
+      * [Article](https://doi.org/10.1103/PhysRevB.88.045310)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Doping-induced%20dimensional%20crossover%20and%20thermopower%20burst%20in%20nb-doped%20srtio3%20superlattices&author=Delugas%2CP.&journal=Phys.%20Rev.%20B&volume=88&publication_year=2013)
+  64. 64.
+
+Filippetti, A. _et al._ Thermopower in oxide heterostructures: The importance
+of being multiple-band conductors. _Phys. Rev. B_ **86** , 195301 (2012).
+
+    *       * [CAS](http://chemport.cas.org/cgi-bin/sdcgi?APP=ftslink&action=reflink&origin=npg&version=1.0&coi=1:CAS:528:DC%2BC3sXltlSitw%3D%3D&md5=4efa2a077082f098975189cc84eb65fb)
+      * [Article](https://doi.org/10.1103/PhysRevB.86.195301)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Thermopower%20in%20oxide%20heterostructures%3A%20The%20importance%20of%20being%20multiple-band%20conductors&author=Filippetti%2CA.&journal=Phys.%20Rev.%20B&volume=86&publication_year=2012)
+  65. 65.
+
+Filippetti, A., Fiorentini, V., Ricci, F., Delugas, P. & Íñiguez, J.
+Prediction of a native ferroelectric metal. _Nature Communications_ **7** ,
+11211 (2016).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Prediction%20of%20a%20native%20ferroelectric%20metal&author=Filippetti%2CA.&author=Fiorentini%2CV.&author=Ricci%2CF.&author=Delugas%2CP.&author=%C3%8D%C3%B1iguez%2CJ.&journal=Nature%20Communications&volume=7&publication_year=2016)
+  66. 66.
+
+Durczewski, K. & Ausloos, M. Nontrivial behavior of the thermoelectric power:
+Electron-electron versus electron-phonon scattering. _Phys. Rev. B_ **61** ,
+5303–5310 (2000).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Nontrivial%20behavior%20of%20the%20thermoelectric%20power%3A%20Electron-electron%20versus%20electron-phonon%20scattering&author=Durczewski%2CK.&author=Ausloos%2CM.&journal=Phys.%20Rev.%20B&volume=61&pages=5303-5310&publication_year=2000)
+  67. 67.
+
+Faghaninia, A., Ager, J. W. & Lo, C. S. _Ab initio_ electronic transport model
+with explicit solution to the linearized boltzmann transport equation. _Phys.
+Rev. B_ **91** , 235123 (2015).
+
+    *       * [Article](https://doi.org/10.1103/PhysRevB.91.235123)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Ab%20initio%20electronic%20transport%20model%20with%20explicit%20solution%20to%20the%20linearized%20boltzmann%20transport%20equation&author=Faghaninia%2CA.&author=Ager%2CJ.%20W.&author=Lo%2CC.%20S.&journal=Phys.%20Rev.%20B&volume=91&publication_year=2015)
+  68. 68.
+
+Giustino, F., Cohen, M. L. & Louie, S. G. Electron-phonon interaction using
+wannier functions. _Phys. Rev. B_ **76** , 165108 (2007).
+
+    *       * [CAS](http://chemport.cas.org/cgi-bin/sdcgi?APP=ftslink&action=reflink&origin=npg&version=1.0&coi=1:CAS:528:DC%2BD2sXht12itL%2FL&md5=270896549c87ff75212c71dc879e3f13)
+      * [Article](https://doi.org/10.1103/PhysRevB.76.165108)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Electron-phonon%20interaction%20using%20wannier%20functions&author=Giustino%2CF.&author=Cohen%2CM.%20L.&author=Louie%2CS.%20G.&journal=Phys.%20Rev.%20B&volume=76&publication_year=2007)
+  69. 69.
+
+Xu, B. & Verstraete, M. J. First principles explanation of the positive
+seebeck coefficient of lithium. _Phys. Rev. Lett._ **112** , 196603 (2014).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=First%20principles%20explanation%20of%20the%20positive%20seebeck%20coefficient%20of%20lithium&author=Xu%2CB.&author=Verstraete%2CM.%20J.&journal=Phys.%20Rev.%20Lett.&volume=112&publication_year=2014)
+  70. 70.
+
+Uehara, K. & Tse, J. S. Calculations of transport properties with the
+linearized augmented plane-wave method. _Phys. Rev. B_ **61** , 1639–1642
+(2000).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Calculations%20of%20transport%20properties%20with%20the%20linearized%20augmented%20plane-wave%20method&author=Uehara%2CK.&author=Tse%2CJ.%20S.&journal=Phys.%20Rev.%20B&volume=61&pages=1639-1642&publication_year=2000)
+  71. 71.
+
+Jain, A. _et al._ Fireworks: a dynamic workflow system designed for high-
+throughput applications. _Concurrency and Computation: Practice and
+Experience_ **27** , 5037–5059 (2015).
+
+    *       * [Article](https://doi.org/10.1002/cpe.3505)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Fireworks%3A%20a%20dynamic%20workflow%20system%20designed%20for%20high-throughput%20applications&author=Jain%2CA.&journal=Concurrency%20and%20Computation%3A%20Practice%20and%20Experience&volume=27&pages=5037-5059&publication_year=2015)
+  72. 72.
+
+Ong, S. P. _et al._ Python materials genomics (pymatgen): A robust, open-
+source python library for materials analysis. _Computational Materials
+Science_ **68** , 314–319 (2013).
+
+    *       * [CAS](http://chemport.cas.org/cgi-bin/sdcgi?APP=ftslink&action=reflink&origin=npg&version=1.0&coi=1:CAS:528:DC%2BC3sXhsVGjt7g%3D&md5=fe080aefc9833db731ada66c233a5e70)
+      * [Article](https://doi.org/10.1016/j.commatsci.2012.10.028)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Python%20materials%20genomics%20\(pymatgen\)%3A%20A%20robust%2C%20open-source%20python%20library%20for%20materials%20analysis&author=Ong%2CS.%20P.&journal=Computational%20Materials%20Science&volume=68&pages=314-319&publication_year=2013)
+  73. 73.
+
+Ong, S. P. _et al._ The materials application programming interface (api): A
+simple, flexible and efficient {API} for materials data based on
+{REpresentational} state transfer (rest) principles. _Computational Materials
+Science_ **97** , 209–215 (2015).
+
+    *       * [Article](https://doi.org/10.1016/j.commatsci.2014.10.037)
+      * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=The%20materials%20application%20programming%20interface%20\(api\)%3A%20A%20simple%2C%20flexible%20and%20efficient%20%7BAPI%7D%20for%20materials%20data%20based%20on%20%7BREpresentational%7D%20state%20transfer%20\(rest\)%20principles&author=Ong%2CS.%20P.&journal=Computational%20Materials%20Science&volume=97&pages=209-215&publication_year=2015)
+  74. 74.
+
+Fielding, R. T. _Architectural Styles and the Design of Network-based Software
+Architectures_ , Ph.D. thesis University of California, Irvine
+<http://www.ics.uci.edu/fielding/pubs/dissertation/top.htm> (2000).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&author=Fielding%2CR.%20T&journal=Architectural%20Styles%20and%20the%20Design%20of%20Network-based%20Software%20Architectures&publication_year=2000)
+  75. 75.
+
+Gaultois, M. W. _et al._ Data-driven review of thermoelectric materials:
+Performance and resource considerations. _Chemistry of Materials_ **25** ,
+2911–2920 (2013).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&title=Data-driven%20review%20of%20thermoelectric%20materials%3A%20Performance%20and%20resource%20considerations&author=Gaultois%2CM.%20W.&journal=Chemistry%20of%20Materials&volume=25&pages=2911-2920&publication_year=2013)
+  76. 76.
+
+Mrl, material research laboratory.
+<http://www.mrl.ucsb.edu:8080/datamine/about.jsp>.
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?)
+  77. 77.
+
+Landolt-bornstein—group III condensed matter. <http://materials.springer.com>.
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?)
+  78. 78.
+
+May, A. F. & G. J. S. _Introduction to Modeling Thermoelectric Transport at
+High Temperatures_ **Vol. 1** , Chap. 11 (CRC Press, 2012).
+
+    *       * [Google Scholar](http://scholar.google.com/scholar_lookup?&author=May%2CA.%20F.&author=G.%20J.%20S.&journal=Introduction%20to%20Modeling%20Thermoelectric%20Transport%20at%20High%20Temperatures&volume=Vol.%201&publication_year=2012)
+
+[Download references](/articles/sdata201785-references.ris)
+
+## Data Citations
+
+  1. 1.
+
+Ricci, F. _Dryad digital repository_ <https://doi.org/10.5061/dryad.gn001>
+(2017)
+
+## Acknowledgements
+
+This work was intellectually led by the U.S. Department of Energy, Office of
+Basic Energy Sciences, Early Career Research Program, which funded A.J.’s
+portion of this work. F.R. and G.H. were supported by the F.R.S.-FNRS project
+HTBaSE (contract no PDR-T.1071.15). W.C., U.A., and G.J.S. acknowledge funding
+from the Materials Project Center, supported by the DOE Basic Energy Sciences
+Grant No. EDCBEE. This work made use of resources of the National Energy
+Research Scientific Computing Center (NERSC), supported by the Office of Basic
+Energy Sciences of the U.S. Department of Energy under Contract No. DE-
+AC02-05CH11231. Additional computational resources were provided by the
+supercomputing facilities of the Université catholique de Louvain (CISM/UCL),
+the Consortium des Equipements de Calcul Intensif en Fédération Wallonie
+Bruxelles (CECI) funded by the F.R.S.-FNRS. The authors thank Shyue Ping Ong
+for his contributions in maintaining and developing pymatgen which was used
+heavily in this work. They also thank Max Wood and Jan-Hendrik Pöhls for
+contributing in the review process of the article.
+
+## Author information
+
+## Affiliations
+
+  1. ### Institute of Condensed Matter and Nanosciences (IMCN), Université catholique de Louvain, Chemin des étoiles 8, bte L7.03.01, Louvain-la-Neuve, Belgium
+
+    * Francesco Ricci
+    * , Gian-Marco Rignanese
+    *  & Geoffroy Hautier
+  2. ### Lawrence Berkeley National Lab, 1 Cyclotron Rd, Berkeley, California, USA
+
+    * Wei Chen
+    *  & Anubhav Jain
+  3. ### Department of Mechanical, Materials and Aerospace Engineering, Illinois Institute of Technology, Chicago, Illinois 60616, USA
+
+    * Wei Chen
+  4. ### Department of Materials Science and Engineering, Northwestern University, 2220 Campus Drive, Evanston, Illinois 60208, USA
+
+    * Umut Aydemir
+    *  & G. Jeffrey Snyder
+
+## Authors
+
+  1. ### Search for Francesco Ricci in:
+
+    * [Nature Research journals](/search/executeSearch?sp-q=%22Francesco+Ricci%22&sp-p=all&pag-start=1&sp-c=25&sp-m=1&sp-s=date_descending) •
+    * [PubMed](http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=Francesco+Ricci) •
+    * [Google Scholar](http://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22Francesco+Ricci%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)
+  2. ### Search for Wei Chen in:
+
+    * [Nature Research journals](/search/executeSearch?sp-q=%22Wei+Chen%22&sp-p=all&pag-start=1&sp-c=25&sp-m=1&sp-s=date_descending) •
+    * [PubMed](http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=Wei+Chen) •
+    * [Google Scholar](http://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22Wei+Chen%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)
+  3. ### Search for Umut Aydemir in:
+
+    * [Nature Research journals](/search/executeSearch?sp-q=%22Umut+Aydemir%22&sp-p=all&pag-start=1&sp-c=25&sp-m=1&sp-s=date_descending) •
+    * [PubMed](http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=Umut+Aydemir) •
+    * [Google Scholar](http://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22Umut+Aydemir%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)
+  4. ### Search for G. Jeffrey Snyder in:
+
+    * [Nature Research journals](/search/executeSearch?sp-q=%22G.%20Jeffrey+Snyder%22&sp-p=all&pag-start=1&sp-c=25&sp-m=1&sp-s=date_descending) •
+    * [PubMed](http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=G.%20Jeffrey+Snyder) •
+    * [Google Scholar](http://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22G.%20Jeffrey+Snyder%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)
+  5. ### Search for Gian-Marco Rignanese in:
+
+    * [Nature Research journals](/search/executeSearch?sp-q=%22Gian-Marco+Rignanese%22&sp-p=all&pag-start=1&sp-c=25&sp-m=1&sp-s=date_descending) •
+    * [PubMed](http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=Gian-Marco+Rignanese) •
+    * [Google Scholar](http://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22Gian-Marco+Rignanese%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)
+  6. ### Search for Anubhav Jain in:
+
+    * [Nature Research journals](/search/executeSearch?sp-q=%22Anubhav+Jain%22&sp-p=all&pag-start=1&sp-c=25&sp-m=1&sp-s=date_descending) •
+    * [PubMed](http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=Anubhav+Jain) •
+    * [Google Scholar](http://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22Anubhav+Jain%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)
+  7. ### Search for Geoffroy Hautier in:
+
+    * [Nature Research journals](/search/executeSearch?sp-q=%22Geoffroy+Hautier%22&sp-p=all&pag-start=1&sp-c=25&sp-m=1&sp-s=date_descending) •
+    * [PubMed](http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=search&term=Geoffroy+Hautier) •
+    * [Google Scholar](http://scholar.google.co.uk/scholar?as_q=&num=10&btnG=Search+Scholar&as_epq=&as_oq=&as_eq=&as_occt=any&as_sauthors=%22Geoffroy+Hautier%22&as_publication=&as_ylo=&as_yhi=&as_allsubj=all&hl=en)
+
+### Contributions
+
+F.R. worked on the analysis, verification and preparation of the data. F.R.
+implemented and performed the band interpolation check. A.J., G.H., F.R.,
+G.-M. R., and W.C. worked on the development, implementation and running of
+the high-throughput band structure and BoltzTraP framework. U.A and G.J.S.
+worked on the analysis and verification of the data. G.H. supervised the work.
+F.R., G.H., and A.J. wrote the manuscript with help from U.A, G.J.S., and
+G.-M.R.
+
+### Competing interests
+
+The authors declare no competing financial interests.
+
+## Corresponding author
+
+Correspondence to [Geoffroy
+Hautier](/articles/sdata201785/email/correspondent/c1/new).
+
+## Rights and permissions
+
+[![Creative Commons
+BY](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAAAfCAMAAABUFvrSAAABblBMVEUAAAD///////8AAAD///9AQEDBxcDGysXIzMfLzsrMz8vO0c3Q08/R1NAQEBDf39/M0MtgYGDLz8qfn5+vta61urS3vLa8wbu9wry/v78gICDDx8LEyMMoKSgpKSnJzcjJzckwMDDM0MwNDg1DREMbGxtQUFCRk5FwcHDT1tKAgIDv7+95fHmxt7C5vrits6y0urN8f3y2u7W4vbddXl25vrm6v7m7wLq8wLyEhYSEhoS+wr2+w76JjIm/w76/xL7Axb8+Pz7DyMPEx8ORlJHEycTFycSTmJPHy8eeoJ0ODg7KzcnLz8uus62utK2vr6/N0c2vtK7O0s7Pz8/P08/Q1NCwtq/R1NHS1dHS1dJQUVCyt7GyuLGzuLJ9f3xwcm+0ubPAxL+WmZaPj4+ssquws6+wta+8wbzN0MzN0cw1NjW9wr2xtrDFycWfo57Gysarsaqvsq/IzMgyMzG6v7qChYLW1dXAxcC7wLvCx8KSagRmAAAAA3RSTlMACg7nIQFTAAACyklEQVR4XrWVVW8jQRCEfVfLaGZmDDMzM3OOmfn+/c2s48gQe3UbpWSp98H6VFM93WN7jAeRzQZ4vF2+CW6OF+KilExKznWBD3NTvkGv57Lyaqu7+8WX/xchE+6Q/2mIjzllRT0tFE6PFXkjxodm/EOU7N7qfmGJbAPh/g6viLI6mk6BKJUeU/ecwiL3npAvjtybrZbLURBFy53BXYQr2JVcBrfKLCjJ2BLnH/Q+OT9qsbwcAdh8ngUiy53AvqdhIameAdAcxUCg6NAAnM2/jS3O+Lr6LivNlj+tIaszRHoWa8sdwBOhFTvlasUSU5VLAyLzSSE0NdzvIZYbwRE4CBWgf0SkA5jjRYVwEzpzq1ICOFOcPOcnlj/sNmRRRvZXDcxkUW4Pnvsm5wiX2G0kL+zFwtPD3p5z92Y9OIo6Bzqi7cG8U81A22caVNKQUTd47nWX56IxC7CU6AActLJoDxZ2RoEi0yQXMCYLofEhkkUjOE+BIKI13wEcP0hDI0EEsixbrJbnhKwhrazTLJ5Udq2BRTUFBwGCit02ioMeNnXsXJr5099TcVuLQjoBiMUEgnog6EogoW8HXUYWpxLP+ciFI+CW5gGmzbMXgADDGDnfFuMEheTnVnAZWcbkulkANw1I3hgQ8yhK+8EiiYKW5igsjHSteTdduynUTUoVW5tHyREg4cgnzJZQ/OAMGnN73bZZozBBpJV4ePpH9bpZWZvCTg54fveA/B0f7Lukk2dl0X80Rlo3HWlztS6h1buWUE6OzU2RwaNLyBIYvaIyQMh1a0g31qb4E9ZFwbiWDusXfamoAe9Uey/uC8ZV8nCg6WlS3zxDO1Xng36YgXElKav1j2lOsbfngrn5MTAF41qU1Vzt+V9QZbFTDrW1CXMw8P2rc+dAPSkUTlRF3ng5C5g4NgfXNDs5Ikp2uySOTFLs/R0/kGyPHoj7D6ln6exBJmfnAAAAAElFTkSuQmCC)](http://creativecommons.org/licenses/by/4.0/)Open
+Access This article is licensed under a Creative Commons Attribution 4.0
+International License, which permits use, sharing, adaptation, distribution
+and reproduction in any medium or format, as long as you give appropriate
+credit to the original author(s) and the source, provide a link to the
+Creative Commons license, and indicate if changes were made. The images or
+other third party material in this article are included in the article’s
+Creative Commons license, unless indicated otherwise in a credit line to the
+material. If material is not included in the article’s Creative Commons
+license and your intended use is not permitted by statutory regulation or
+exceeds the permitted use, you will need to obtain permission directly from
+the copyright holder. To view a copy of this license, visit
+<http://creativecommons.org/licenses/by/4.0/> The Creative Commons Public
+Domain Dedication waiver <http://creativecommons.org/publicdomain/zero/1.0/>
+applies to the metadata files made available in this article.
+
+## About this article
+
+### Publication history
+
+#### Received
+
+14 February 2017
+
+#### Accepted
+
+28 April 2017
+
+#### Published
+
+04 July 2017
+
+### DOI
+
+<https://doi.org/10.1038/sdata.2017.85>
+
+## Article Tools
+
+[ Download PDF ](/articles/sdata201785.pdf)
+
+**13** Citations
+
+**6** Altmetric
+
+  
+[Article metrics](/articles/sdata201785/metrics)
+
+[
+![Advertisement](//pubads.g.doubleclick.net/gampad/ad?iu=/285/sdata.nature.com/article&sz=300x250&c=1643196877&t=pos%3Dright%26type%3Darticle%26artid%3Dsdata201785%26doi%3D10.1038/sdata.2017.85%26subjmeta%3D1034,1037,1038,119,301,639,995%26kwrd%3DComputational
+methods,Electronic properties and materials,Electronic
+structure)](//pubads.g.doubleclick.net/gampad/jump?iu=/285/sdata.nature.com/article&sz=300x250&c=1643196877&t=pos%3Dright%26type%3Darticle%26artid%3Dsdata201785%26doi%3D10.1038/sdata.2017.85%26subjmeta%3D1034,1037,1038,119,301,639,995%26kwrd%3DComputational
+methods,Electronic properties and materials,Electronic structure)
+
+##  Scientific Data menu
+
+  * [Browse Articles](/sdata/articles)
+  * [Browse Collections](/sdata/collections)
+
+  * [About](/sdata/about)
+  * [Publish](/sdata/publish)
+  * [Policies](/sdata/policies)
+  * [Contact](/sdata/contact)
+
+### Nature Research menu
+
+#### Our Journals
+
+  * [Nature](/nature)
+  * [Nature Communications](/ncomms)
+  * [Nature Protocols](/nprot)
+  * [Scientific Reports](/srep)
+  * [View all journals](/siteindex)
+
+#### Subjects
+
+  * [Biological Sciences](/subjects/biological-sciences)
+  * [Scientific Community & Society](/subjects/scientific-community-and-society)
+  * [Earth & Environmental Sciences](/subjects/earth-and-environmental-sciences)
+  * [Health Sciences](/subjects/health-sciences)
+  * [Physical Sciences](/subjects/physical-sciences)
+  * [View all subjects](/subjects)
+
+#### More
+
+  * [Contact us](https://support.nature.com/support/home)
+  * [Authors & Referees](/authors/index.html)
+  * [Librarians](/libraries/index.html)
+  * [Advertisers](/advertising/index.html)
+  * [Press](/npg_/press_room/index.html)
+  * [About Nature Research](/npg_/index_npg.html)
+
+## Search
+
+Article search
+
+Search
+
+[Advanced search](/search/advanced)
+
+### Quick links
+
+  * [Explore articles by subject](/subjects)
+  * [Find a job](/naturecareers)
+  * [Guide to authors](/authors/index.html)
+  * [Editorial policies](/authors/editorial_policies/)
+
+## Scientific Data
+
+ISSN 2052-4463 (online)
+
+## nature.com sitemap
+
+![Nature](/static/images/natureresearch-logo.2fe351a520.svg)
+
+  * [About us](https://www.nature.com/npg_/company_info/index.html)
+  * [Press releases](https://www.nature.com/npg_/press_room/press_releases.html)
+  * [Press office](https://press.nature.com/)
+  * [Contact us](https://support.nature.com/support/home)
+
+  * [![Facebook](/static/images/fb.49ba391f15.svg)](https://www.facebook.com/nature/)
+  * [![Twitter](/static/images/twitter.a90dbeb03a.svg)](https://twitter.com/nresearchnews?lang=en)
+  * [![Youtube](/static/images/youtube.6071f6012c.svg)](https://www.youtube.com/channel/UCvCLdSgYdSTpWcOgEJgi-ng)
+
+### Discover content
+
+  * [Journals A-Z](https://www.nature.com/siteindex/)
+  * [Articles by subject](https://www.nature.com/subjects/)
+  * [Nano](https://nano.nature.com/)
+  * [Protocol Exchange](https://www.nature.com/protocolexchange/)
+  * [Nature Index](https://www.natureindex.com/)
+
+### Publish with us
+
+  * [Guide to Authors](https://www.nature.com/authors/author_resources/index.html)
+  * [Guide to Referees](https://www.nature.com/authors/peer_review/)
+  * [Editorial policies](https://www.nature.com/authors/editorial_policies/)
+  * [Open access](http://www.nature.com/openresearch/publishing-with-npg/)
+  * [Reprints & permissions](https://www.nature.com/reprints/)
+
+### Researcher services
+
+  * [Research data](https://www.springernature.com/gp/authors/research-data)
+  * [Language editing](https://authorservices.springernature.com/language-editing/?utm_source=natureAuthors&utm_medium=referral&utm_campaign=natureAuthors)
+  * [Scientific editing](https://authorservices.springernature.com/scientific-editing/?utm_source=natureAuthors&utm_medium=referral&utm_campaign=natureAuthors)
+  * [Nature Masterclasses](https://masterclasses.nature.com/)
+  * [Nature Research Academies](https://partnerships.nature.com/product/nature-research-academies/)
+
+### Libraries & institutions
+
+  * [Librarian service & tools](https://www.springernature.com/gp/librarians/tools-services)
+  * [Librarian portal](https://www.springernature.com/gp/librarians/manage-your-account/librarianportal)
+  * [Open research](http://www.nature.com/openresearch/about-open-access/information-for-institutions/)
+
+### Advertising & partnerships
+
+  * [Advertising](https://partnerships.nature.com/)
+  * [Partnerships & Services](https://partnerships.nature.com/home/services/)
+  * [Media kits](https://partnerships.nature.com/home/resources/)
+  * [Branded content](https://partnerships.nature.com/product/branded-content-native-advertising/)
+
+### Career development
+
+  * [Nature Careers](https://www.nature.com/naturecareers)
+  * [Nature Conferences](https://www.nature.com/natureconferences/)
+  * [Nature events](https://www.nature.com/natureevents/)
+
+### Regional websites
+
+  * [Nature China](http://www.naturechina.com)
+  * [Nature India](https://www.nature.com/nindia)
+  * [Nature Japan](https://www.natureasia.com/ja-jp/)
+  * [Nature Korea](https://www.natureasia.com/ko-kr/)
+  * [Nature Middle East](https://www.nature.com/nmiddleeast/)
+
+![Springer Nature](/static/images/sn-logo.4368f3b177.svg)
+
+© 2019 Springer Nature Publishing AG
+
+  * [Privacy Policy](https://www.nature.com/info/privacy.html)
+  * [Use of cookies](https://www.nature.com/info/cookies.html)
+  * [Manage cookies](javascript:;)
+  * [Legal notice](https://www.nature.com/info/legal_notice.html)
+  * [Accessibility statement](https://www.nature.com/info/accessibility_statement.html)
+  * [Terms & Conditions](https://www.nature.com/info/tandc.html)
+
+![](https://verify.nature.com/verify/nature.png)
+![](/platform/track/article/sdata201785)
+
+  *[Open]: Open Access
+  *[DOI]: Digital Object Identifier
+  *[ISSN]: International Standard Serial Number
+
+

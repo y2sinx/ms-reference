@@ -1,0 +1,1851 @@
+
+
+■ METHODS
+Density functional theory (DFT) calculations were performed
+within the Vienna Ab initio Simulation Package (VASP, version
+5. 
+. 
+). 
+ The projector-augmented-wave (PAW) method32,33
+within VASP was employed for all calculations. 
+ 2s2p states
+of C; the 4d5s states of Mo and Pd; and the 5d6s states of W,
+Pt, and Au were treated as valence electrons, using the default
+PAW potentials in VASP to describe the nuclei and all (frozen)
+core electrons. 
+ employed three different exchangecorrelation (XC) functionals: the local-density approximation
+(LDA),34,35 the generalized gradient approximation within the
+Perdew−Burke−Ernzerhof (PBE) form,36 and PBE with a
+reparametrization for solids (PBEsol). 
+
+We used periodic slab models for calculating surface
+properties. 
+ slab had two symmetric surfaces. 
+ vacuum
+spacing of 30 Å was used to isolate the periodic images from
+each other. 
+ examined the dependence of the surface
+energies on slab thickness and found that nine layers of Pd, Pt,
+and Au and 11 layers of WC, W2C, and Mo2C are sufficient to
+converge the surface energies to an accuracy of 6 mJ/m2. 
+
+adopted these surface slabs with converged surface energies for
+subsequent work function and PZC calculations. 
+ used Γ-
+point-centered Monkhorst−Pack38 k-point grids for all
+calculations. 
+ k-meshes for the bulk crystals were 18 × 18
+× 18 for conventional (four-atom) cubic unit cells of facecentered cubic Au, Pd, and Pt; 30 × 30 × 30 for the primitive
+(two-atom) unit cell of hexagonal-close-packed (hcp) WC; 27
+× 27 × 18 for the primitive (three-atom) unit cell of hexagonal
+W2C; and 15 × 12 × 15 for the orthorhombic (12-atom) unit
+cell of Mo2C. 
+ used a k-point grid of 33 × 33 × 1 for the Au,
+The Journal of Physical Chemistry C Article
+DOI: 10. 
+/acs. 
+. 
+
+J. 
+. 
+. 
+ 2016, 120, 23698−23706
+23699Pd, Pt, WC, and W2C surface calculations. 
+ extremely dense
+k-point grid used in these surface calculations was used solely to
+demonstrate efficiency; a coarser k-point grid (20 × 20 × 1) in
+fact is sufficient to reach an accuracy of 1. 
+ meV/atom for the
+total energy. 
+ the Mo2C surfaces with much larger in-plane
+lattice constants, we used a k-point grid of 12 × 15 × 1. 
+
+truncated the plane-wave basis at a kinetic energy of 700 eV,
+which, together with the above k-point grids, converged all total
+energies to within 1. 
+ meV/atom. 
+ fully optimized the
+atomic coordinates until the interatomic forces were below 0. 
+
+eV/Å. 
+ Brillouin zone was integrated using the Methfessel−
+Paxton method,39 with a smearing width of 0. 
+ eV during total
+energy evaluation and geometry optimization. 
+To calculate the bulk cohesive energy Ecoh, each of the
+constituent atoms is placed in the center of a rectangular
+vacuum box with asymmetric side lengths of 20, 21, and 22 Å. 
+This asymmetric box is necessary to obtain nonspherically
+symmetric orbital occupations corresponding to the electronic
+ground states of these isolated atoms. 
+ determined the DFT
+ground states of C, Mo, Pd, W, Pt, and Au atoms to be 3P, 7S,
+1S, 7S, 3D, and 2S, respectively. 
+ of these DFT ground states
+are consistent with experimental atomic spectroscopic data,40
+except for W, for which DFT produces the wrong ground state
+(7S instead of 5D)17 caused by errors in the XC functionals. 
+,41
+We used the 7S state in the ensuing cohesive energy
+calculations because this state is 0. 
+ eV lower than the 5D
+state when using the PBE functional. 
+
+Because they are less commonly used, we briefly describe
+joint density functional theory (JDFT) and the polarizable
+continuum model (PCM) employed here, referring the reader
+to the original references42−44 for further details. 
+ the JDFT
+framework, the free energy of a solvated system (solute and
+solvent) is divided into three contributions that arise from the
+electronic subsystem (solute), the liquid subsystem (solvent),
+and the coupling interactions between the two subsystems. 
+Each of these contributions can be dealt with at different levels
+of approximations, for example Schwartz et al. 
+ a
+more accurate but also expensive quantum Monte Carlo
+method to treat the electronic system. 
+ In our work, the
+electronic system is treated at the DFT level. 
+ then choose
+PCMs to approximate the liquid as a dielectric response. 
+Correspondingly, there exists a dielectric cavity at the interface
+between the electronic and liquid subsystems. 
+ empirical
+parameters nc and σ enter the cavity shape function, s, that
+determines the shape of the cavity:
+σ
+=
+⎧⎨⎩
+⎫⎬⎭
+s
+1 n n
+2
+erfc
+log( / )
+2
+c
+(1)
+where n
+c is the critical electron density at which the dielectric
+cavity forms, separating the solvent and the solute, and
+smoothly switches the dielectric constant from the solvent
+value to the vacuum value (ε = 1); σ is the width controlling
+the transition from liquid to solute. 
+ selected the recent
+parametrizations of nc and σ for our PCM calculations. 
+ These
+parameters were obtained by fitting calculated solvation
+energies of a number of molecules to experimental data. 
+The JDFT-PCM method has been implemented in the
+VASPsol47 and JDFTx48,49 software packages. 
+ this work, we
+mainly utilized the former package for solvation calculations
+with water as the solvent (i. 
+. 
+ dielectric constant ε = 78. 
+). 
+
+used JDFTx to crosscheck several surface energies in both
+vacuum and liquid environments and compared the surface
+energies with those calculated with VASP. 
+ reduce
+computational cost within JDFTx, the optimized geometries
+Table 1. 
+ Constants a0, b0, and c0 (Å); Surface Energy, Esurf (J/m2); Bulk Cohesive Energy, Ecoh (eV/atom); and Work
+Function, Φ (eV), of Au, Pd, Pt, WC, W2C, and Mo2C Obtained with the LDA, PBE, and PBEsol XC Functionalsa
+a0 b0 c0 Esurf Ecoh Φ PZC
+Au 4. 
+ − − 1. 
+ 4. 
+ 5. 
+ 4. 
+
+4. 
+ 0. 
+ 3. 
+ 5. 
+
+4. 
+ 0. 
+ 3. 
+ 5. 
+
+4. 
+ 1. 
+ 3. 
+ 5. 
+ ± 0. 
+
+Pd 3. 
+ − − 1. 
+ 5. 
+ 5. 
+ 5. 
+
+3. 
+ 1. 
+ 3. 
+ 5. 
+
+3. 
+ 1. 
+ 4. 
+ 5. 
+
+3. 
+ 2. 
+ 3. 
+ 5. 
+. 
+
+Pt 3. 
+ − − 1. 
+ 7. 
+ 6. 
+ 5. 
+
+3. 
+ 1. 
+ 5. 
+ 5. 
+
+3. 
+ 1. 
+ 6. 
+ 5. 
+
+3. 
+ 2. 
+ 5. 
+ 6. 
+ ± 0. 
+
+WC 2. 
+ − 2. 
+ 3. 
+ 9. 
+ 5. 
+ 4. 
+
+2. 
+ 2. 
+ 3. 
+ 8. 
+ 4. 
+
+2. 
+ 2. 
+ 3. 
+ 9. 
+ 5. 
+
+2. 
+ 2. 
+
+W2C 3. 
+ − 4. 
+ 3. 
+ 9. 
+ 5. 
+ 4. 
+
+3. 
+ 4. 
+ 2. 
+ 8. 
+ 4. 
+
+3. 
+ 4. 
+ 3. 
+ 8. 
+ 5. 
+
+3. 
+ 4. 
+
+Mo2C 4. 
+ 5. 
+ 5. 
+ 3. 
+ 8. 
+ 4. 
+ 4. 
+
+4. 
+ 6. 
+ 5. 
+ 2. 
+ 7. 
+ 4. 
+
+4. 
+ 6. 
+ 5. 
+ 3. 
+ 7. 
+ 4. 
+
+4. 
+ 6. 
+ 5. 
+
+aPZCs (V) for each of these materials, calculated using PBEsol, are also listed. 
+ the lowest surface energy is shown for WC, W2C, and Mo2C
+surfaces. 
+ experimental data (italicized) are shown for comparison. 
+. 
+. 
+. 
+The Journal of Physical Chemistry C Article
+DOI: 10. 
+/acs. 
+. 
+
+J. 
+. 
+. 
+ 2016, 120, 23698−23706
+23700from VASP were directly used as input configurations for the
+JDFTx calculations. 
+, we needed to adopt coarser
+k-point grids in the JDFTx calculations, i. 
+. 
+ 12 × 12 × 1 for all
+surface slabs other than the bare Mo2C surface and its hybrid
+structures with metal monolayers, for which 3 × 5 × 1 was
+used. 
+ settings represented the most accurate calculations
+we could afford. 
+ JDFTx calculations employed the PBEsol
+functional and ultrasoft pseudopotentials from the Garrity−
+Bennett−Rabe−Vanderbilt pseudopotential library. 
+ The
+kinetic energy cutoff of the plane wave basis was set to 30
+hartree. 
+ PBEsol surface energies calculated with VASP and
+JDFTx are very similar (see Supporting Information, Tables S1
+and S2), even though the parameters used in the two programs
+are different. 
+ good agreement validates the JDFTx
+parameters used in the ensuing solvation calculations. 
+■ RESULTS
+To benchmark our choice of physical models, we first compare
+the lattice constants (a0, b0, and c0) of bulk Au, Pd, Pt, WC,
+W2C, and Mo2C calculated using the LDA, PBE, and PBEsol
+XC functionals. 
+ lattice constants for each of these
+materials are also listed in Table 1. 
+ 1 illustrates the
+structures of hcp WC, hexagonal W2C, and orthorhombic
+Mo2C, with space groups P6̅m2, P3̅1m, and Pbcn, respectively. 
+Table 1 lists the theoretical lattice constants obtained with the
+three XC functionals. 
+ observe typical underestimation and
+overestimation of most of the experimental lattice constants by
+the LDA and PBE XC functionals, respectively. 
+ The PBEsol
+functional frequently remedies the shortcomings of the LDA
+and PBE XC functionals, more often leading to the best
+agreement with experimental values for the six bulk materials. 
+We then computed the surface energy of the three metals
+and three TMCs using the LDA, PBE, and PBEsol functionals. 
+We focused on the (111) surface of the metals, the (0001)
+surfaces of WC and W2C, and the (100) surface of Mo2C. 
+These surfaces were selected in order to eventually compare
+with their HER activities, as determined in ref 18. 
+ the three
+pure metals, the surface energy, Esurf, is calculated as
+E = −
+A
+E NE
+1
+2
+surf ( )
+0
+slab bulk
+(2)
+where Eslab is the total energy of a surface periodic slab, Ebulk
+refers to the energy per atom of the bulk metal, N denotes the
+number of atoms in the surface slab, and A0 is the crosssectional area of the surface slab unit cell. 
+ 1 lists the
+predicted Esurf of the three metals. 
+ LDA functional yields
+surface energies closest to experimental values for Au, Pd, and
+Pt, consistent with numerous previous theoretical studies (e. 
+. 
+
+ref 60). 
+ calculations for metal surfaces have shown that
+the LDA functional benefits from error cancellation (overestimation of exchange is compensated for by underestimation
+of correlation) while the PBE functional underestimates both
+contributions. 
+,62 Our results suggest that this error
+cancellation also occurs for real metal surfaces such Au, Pd,
+and Pt. 
+ with the lattice constants, the PBEsol surface
+energies lie between the LDA and PBE values, and all
+functionals predict similar trends in surface energies: Pt > Pd
+> Au. 
+ trends are seen in the bulk cohesive
+energies, Ecoh, calculated as the energy difference between a
+bulk crystal unit cell and that of its constituent (isolated) atoms. 
+The cohesive energy is the energy cost to break all bonds in the
+bulk solid. 
+ the same number of bonds are broken to
+create each of the (111) surfaces of Au, Pd, and Pt, all three
+functionals produce the same trend in Ecoh as for Esurf. 
+
+cohesive energy therefore serves as a useful indicator for
+expected trends in energies of analogous (same Miller index)
+metal surfaces. 
+We next evaluated the surface energies of the three TMCs. 
+We calculated the surface energy of W- or C-terminated WC
+using the same methodology adopted in our previous work on
+WC. 
+ The method for computing the surface energy of the
+other two TMCs M2C (M = Mo and W) is similar:63
+E = − ‐ μ μ
+A
+E N N
+1
+2
+surf ( )
+0
+slab M M C C
+(3)
+where Eslab is the energy of a M2C surface slab with M- or Ctermination and NM and NC are the number of M and C atoms
+in the surface slab, respectively. 
+ chemical potentials μM and
+μC then satisfy the following condition:
+μM C M C (bulk) 2 = + μ μ
+2 (4)
+where μM2C (bulk) refers to the energy per formula unit of bulk
+M2C. 
+ surface energy can be written as a function of the
+chemical potential μC:
+= − + − μ μ ⎜ ⎟
+⎛⎜⎝
+⎛⎝
+⎞⎠
+⎞⎟⎠
+E
+A
+E N
+N
+N
+1
+2
+1 2
+(bulk)
+surf 2
+0
+slab M M C
+M
+C C
+2
+(5)
+In the C-rich limit, μC refers to the free energy of a C atom
+within graphite. 
+ used Grimme’s D3 correction64 when
+computing μC to treat the interlayer van der Waals interactions
+in graphite. 
+ surface energy can also be expressed as a
+function of the chemical potential μM:
+E = − + − μ μ
+A
+E N N N
+1
+2
+surf ( (bulk) (2 ) )
+0
+slab C M C C M M
+2
+(6)
+In the M-rich limit, μM is the free energy of an M atom within
+ground-state, body-centered-cubic W or Mo. 
+ S3 lists all
+of the calculated energies of the surfaces with different
+terminations and in the M- or C-rich limits. 
+ accounted
+for the two types of terminations for the W2C (0001) surface,
+i. 
+. 
+ the WI and WII terminations as illustrated in Figure 1b. 
+
+Figure 1. 
+ and side views of primitive unit cells of (a) WC, (b)
+W2C, and (c) Mo2C. 
+ two inequivalent W sites in W2C are
+denoted by I and II, respectively. 
+The Journal of Physical Chemistry C Article
+DOI: 10. 
+/acs. 
+. 
+
+J. 
+. 
+. 
+ 2016, 120, 23698−23706
+23701surface energy of the WI-terminated surface is independent of
+the W- or C-rich condition because the surface slab is
+stoichiometric. 
+ W2C surface with the WI-termination has
+an energy that is much lower (∼1. 
+ J/m2 lower) than that with
+the WII termination. 
+ the geometry depicted in Figure 1b,
+this finding is not surprising: cleavage at the weakest, longest
+bonds, the metal−metal bonds, produces this surface. 
+The lowest energies of each surface computed with the three
+XC functionals were extracted from Table S3 and are displayed
+in Table 1. 
+ experimental surface energies are not yet
+available for these TMCs, our theoretical results agree well with
+prior DFT values for WC17,65 and Mo2C. 
+ The TMC surface
+energies are predicted to be significantly higher than those of
+the three elemental metals. 
+ comparison is again consistent
+with the much higher cohesive energies of the TMCs (Table
+1). 
+ metal-terminated surfaces of the three TMCs, including
+the W-terminated WC, WI-terminated W2C, and Moterminated Mo2C surfaces, are all more energetically favorable
+than their C-terminated counterparts. 
+ henceforth refer to
+these surfaces simply as the WC, W2C, and Mo2C surfaces and
+base our subsequent simulations of hybrid metal monolayer−
+TMC catalysts on these surfaces as substrates. 
+We next computed the work function, Φ, of the three
+elemental metals and the three TMCs. 
+ 1 lists the
+calculated work function using the three XC functionals. 
+
+results are in excellent agreement with previous calculations,
+especially for the three metals calculated using the LDA and
+PBE functionals. 
+,67 The PBEsol functional most accurately
+reproduces the work function for Au and Pd, among the three
+functionals considered. 
+, the calculated Φs of these two
+materials are nearly identical to the experimental values
+measured from photoemission. 
+ contrast, the LDA functional
+best reproduces the measured work function of Pt, although the
+difference in pure metal work function values between all three
+XC functionals is not terribly large (<0. 
+ eV for all three
+metals). 
+Interestingly, all three XC functionals produce the same
+difference of 0. 
+ eV between the work function of Au and Pd. 
+The predicted work function difference between Pd and Pt is
+also nearly constant at ∼0. 
+ eV. 
+ three XCs lead to the same
+trend in work function magnitude of the three metals: Pt > Pd
+> Au. 
+ that this ordering is exactly the same as the trends
+in surface and cohesive energies already presented. 
+ 1 also
+reveals that the TMC work functions are consistently predicted
+to be smaller than those of the elemental metals. 
+ physical
+origin of this trend may be that surface dipoles present on the
+metal-terminated TMC surfaces (metal atoms slightly positively
+charged) decrease the energy cost to extracting the electron
+from the material into the vacuum. 
+The above benchmark tests of the LDA, PBE, and PBEsol
+XC functionals on the bulk and surface properties of the six
+conventional catalysts show that the PBEsol functional
+consistently produces results intermediate between those of
+the LDA and PBE functionals. 
+ therefore expect that the
+PBEsol functional would result in similarly reliable, intermediate surface properties for the nine novel hybrid catalysts. 
+We thus performed all of our subsequent calculations using the
+PBEsol functional. 
+ of different stacking patterns
+of a metal monolayer on top of TMC substrates revealed that
+the most stable heterostructure always exhibits close-packed
+stacking. 
+ S2 lists the layer-stacking sequences and
+optimized interlayer distances between the metal monolayer
+and the TMC substrates. 
+We next calculated the surface energies of the nine novel
+catalysts using the optimized heterostructures as input
+geometries. 
+ a point of reference for our calculations, we
+assume that a heterostructure with a metal monolayer on a
+TMC substrate could be realized by cleaving another
+heterostructure with N (e. 
+. 
+ N = 8 in this work) metal layers
+that have already been deposited on the TMC substrate. 
+
+S1 illustrates the heterostructure and surface slabs of hybrid
+catalyst and pure metal formed upon cleavage. 
+ surface
+energy of each hybrid catalyst then can be defined as the energy
+cost needed to reduce the number of metal layers to a single
+layer, that is
+E = + −
+A
+E E E
+1
+4
+surf ( 2 )
+0
+2L/TMC 7L 16L/TMC
+(7)
+where E
+2L/TMC and E16L/TMC are the energies of the surface slabs
+with one and eight metal layers deposited on each surface of a
+TMC substrate slab, respectively. 
+ thicknesses are not
+arbitrary but are those that lead to convergence of the surface
+energy in our systems here, similar to how one should evaluate
+the surface energy of a pure material (i. 
+. 
+ converging it with
+respect to slab thickness). 
+ factor of 1/2 is implicitly included
+in these two terms because of the two symmetric interfaces in
+the supercells. 
+ is the energy of a seven-layer surface slab
+resulting from the cleavage on one side of the hybrid catalyst
+slab. 
+ 7 contains a factor of 1/4 rather than of 1/2 for
+the surface area term (A0) because four additional surfaces were
+formed as a result of cleavage on both sides of the hybrid
+catalyst slab. 
+ surface energy of a heterostructure based on
+eq 7 is the same as the cleavage or interface energy defined for
+the interface between two dissimilar systems: one a pure metal
+and the other a monolayer metal on a TMC substrate. 
+
+Supporting Information provides a derivation showing that this
+definition reduces to the conventional definition of surface
+energy for a pure material, provided the slab model is
+sufficiently thick. 
+ tests given in the supplement
+verify that our models meet this requirement, thus yielding a
+unique definition of surface energy for our heterostructures. 
+Table 2 reports the surface energies calculated using this
+definition. 
+The surface energies of these novel catalysts are significantly
+smaller than those of pure TMC surfaces, which is to be
+expected because the addition of a metal monolayer leads to
+passivation of the dangling bonds at the TMC surfaces. 
+Exposed metal atoms in a monolayer film have a surface energy
+that is much lower than that of exposed carbon atoms with
+localized dangling bonds. 
+Table 2. 
+ Energy, Esurf (J/m2); Work Function (eV);
+and PZC (V) of Hybrid Catalysts Calculated with the PBEsol
+Functional
+Esurf Φ PZC
+Au/WC 1. 
+ 5. 
+ 5. 
+
+Pd/WC 1. 
+ 4. 
+ 3. 
+
+Pt/WC 2. 
+ 5. 
+ 4. 
+
+Au/W2C 1. 
+ 4. 
+ 4. 
+
+Pd/W2C 1. 
+ 4. 
+ 4. 
+
+Pt/W2C 1. 
+ 4. 
+ 4. 
+
+Au/Mo2C 1. 
+ 4. 
+ 4. 
+
+Pd/Mo2C 1. 
+ 4. 
+ 4. 
+
+Pt/Mo2C 1. 
+ 4. 
+ 4. 
+
+The Journal of Physical Chemistry C Article
+DOI: 10. 
+/acs. 
+. 
+
+J. 
+. 
+. 
+ 2016, 120, 23698−23706
+23702Having calculated these 15 surface energies, we next explored
+the correlation between the measured exchange current
+densities, i0, and the computed surface energies. 
+ 2
+illustrates the variation of i0 (on a logarithmic scale)18 with the
+computed surface energies. 
+ volcano-shaped correlation
+between log(i0) and Esurf is clearly evident, similar to the
+relation between log(i0) and the HBE shown in ref 18. 
+
+peak of this volcano plot in this work corresponds to the
+material with the highest experimental current density (in this
+case, pure Pt). 
+ peak is then referenced to the surface
+energy of Pt. 
+ surface energies of the other materials studied
+in this work are then referenced to this Pt surface energy. 
+
+resulting theoretical volcano plot is therefore uniquely specified. 
+Two key features emerge from Figure 2: (i) the catalytic activity
+peaks around the surface energy of Pt and (ii) surface energies
+that are either too large (e. 
+. 
+ the TMCs) or too small (e. 
+. 
+ Au)
+correspond to poor catalytic activities. 
+ surface energies
+generally correspond to higher surface chemical reactivities. 
+
+This is in keeping with the notion of the surface energy being a
+measure of the degree of coordinative unsaturation of a
+material’s surface atoms. 
+ systems with a large number of
+coordinatively unsaturated atoms will be more reactive than
+those with fewer such atoms. 
+ unsaturated atoms
+tend to bind intermediates too strongly, inhibiting their
+subsequent transformation and/or release from the surface. 
+This effect is an illustration of Sabatier’s principle: those
+surfaces having either too weak or too strong an interaction
+with reactive intermediates will demonstrate diminished
+catalytic activity. 
+ extent of this interaction is certainly
+affected by the degree of coordinative unsaturation of the
+surface atoms. 
+Surface energy calculations require dramatically reduced
+computational time compared to HBE calculations because of
+the former’s reduced complexity. 
+ HBE calculations
+necessitate identification of the most stable binding site for H
+on a surface. 
+ this site has been determined, the binding
+energy is then calculated. 
+ calculations must also be
+performed to ensure that a stable minimum was found and to
+compute the free energy of adsorption. 
+, expensive
+supercell calculations are often necessary to account for
+coverage variations. 
+ contrast, surface energy calculations
+involve only three calculations on surface unit cells: calculations
+of the energies of the hybrid system and the two pure materials. 
+The surface energy could therefore provide a more efficient
+descriptor than the HBE for high-throughput computational
+searches. 
+ hypothesis was verified by calculating the surface
+energies of six hybrid electrocatalysts with known current
+densities, as shown in Figure 2. 
+The experimental exchange current densities for Pt/Mo2C,
+Pd/W2C, and Au/W2C hybrid catalysts have not yet been
+measured. 
+ “volcano” relation established in Figure 2 allows
+us to predict their exchange current densities by relating their
+computed surface energies to the “volcano” trend line. 
+
+trend line suggests that Pt/Mo2C will be a better catalyst than Pd/
+W2C or Au/W2C for the HER. 
+, the surface energy of Pt/
+Mo2C indicates that it could be a hybrid catalyst that exhibits
+activity nearly identical to that of pure Pt. 
+We also explored whether any similar correlation exists
+between catalytic activity and other surface properties such as
+the work function and the PZC. 
+ investigation was inspired
+by the finding several decades ago that the HER’s catalytic
+activity correlated with the work function of metallic electrodes. 
+ We therefore computed the work functions of the nine
+hybrid monolayer metal/TMC catalysts (Table 2). 
+
+variation of the experimental exchange current densities with
+work functions of all 15 materials is displayed in Figure 3. 
+
+used the predicted exchange current densities that were
+extracted from Figure 2 for Pt/Mo2C, Pd/W2C, and Au/
+W2C. 
+ scatter in the data demonstrates no strong
+correlation exists between current density and work function. 
+Finally, we studied how solvation affects the surface energy
+and the work function. 
+ S1 and S2 list the predicted
+surface energies of all 15 catalysts in aqueous solution. 
+
+these surface energies are almost the same as they are in
+vacuum, the liquid environment appears to only trivially affect
+the surface energies. 
+ our solvation model is just a polarizable
+Figure 2. 
+ exchange current densities (adopted from ref
+18) as a function of calculated surface energies at the DFT PBEsol
+level. 
+ energies for Pt/Mo2C, Pd/W2C, and Au/W2C are shown
+as dashed lines. 
+ crossing points of these three lines with the trend
+line of the volcano plot are the corresponding anticipated exchange
+current densities. 
+Figure 3. 
+ exchange current densities (adopted from ref
+18) as a function of calculated work function Φ and PZC. 
+ and
+empty symbols denote Φ and PZC, respectively. 
+ symbols refer
+to Φ and PZC of the three catalysts (Pt/Mo2C, Pd/W2C, and Au/
+W2C) with their predicted exchange current densities based on Figure
+2 intersection points. 
+The Journal of Physical Chemistry C Article
+DOI: 10. 
+/acs. 
+. 
+
+J. 
+. 
+. 
+ 2016, 120, 23698−23706
+23703continuum, our conclusion applies only to surfaces in which the
+electrode−electrolyte interface is an “innocent” one, in which
+water coexists but does not react or dissociate on the electrode
+surface. 
+ such interfaces, our volcano-shaped relation should
+remain valid. 
+ is in keeping with the experimental finding
+that these hybrid systems are highly robust under electrochemical cycling. 
+ inertness suggests that these surfaces are
+negligibly affected by interaction with the bulk electrolyte. 
+Tables S1 and S2 also once again show that the solvated surface
+energies calculated with VASP are similar to the results
+calculated by JDFTx. 
+We also examined the potential correlation of the catalytic
+activity with another important surface property of catalysts in
+solution, namely, the PZC, which can be regarded as the “work
+function” of an electrode immersed in a liquid. 
+ “work
+function” in solution is equal to the work function in vacuum
+corrected by a potential drop at the electrode/liquid interface. 
+In principle, we can use a periodically infinite surface slab with
+implicit solvent to calculate the PZC. 
+, convergence of
+the calculation is slow. 
+ practice, implicit cations/anions are
+added to the simulation supercells by setting their ionic
+concentrations, as implemented in both JDFTx and VASP. 
+These ions induce Debye screening in the simulation supercell,
+which guarantees that the electrostatic potential rapidly decays
+to zero. 
+ In this work, we set the total concentration of
+monovalent ions to 1 M (0. 
+ M H+ and 0. 
+ M HSO4−) to
+model the 0. 
+ M H2SO4 solution used in the experiment. 
+ To
+demonstrate the effect of ions on the electrostatic potential,
+Figure S2 displays the electrostatic potential profiles for the
+WC(0001) surface in the absence and presence of ions in the
+simulations. 
+ thus verify that the electrostatic potential is
+indeed zero outside the electrode if the ions are present in the
+simulation. 
+ zero potential far away represents an absolute
+reference for the electrostatic potential. 
+ added ions also
+lead to a determinate electrostatic potential, and the PZC is the
+negative of the calculated Fermi level of a solvated system as a
+result. 
+The calculated PZC of the metals and TMCs and of the
+hybrid catalysts are reported in Tables 1 and 2, respectively. 
+Figure 3 also displays the variation of the experimental
+exchange current density with the calculated PZC. 
+ observe
+a nearly constant shift of the PZC with reference to the work
+function, i. 
+. 
+ the PZC can simply be written as71 PZC = Φ/e −
+c0. 
+ determined the average shift c0 to be 0. 
+ V with a
+standard deviation of 0. 
+ V. 
+ to the work function, the
+PZC exhibits no volcano-shaped correlation with the exchange
+current densities; therefore, neither electronic propertythe
+work function or the PZCis as good a descriptor of the
+catalytic activity as is the surface energy. 
+■ CONCLUSIONS
+We employed DFT to study the bulk and surface properties of
+six common catalysts, including three elemental metals (Au, Pd,
+and Pt) and three TMCs (WC, W2C, and Mo2C) using the
+LDA, PBE, and PBEsol XC functionals. 
+ showed that the
+PBEsol functional consistently produces properties between
+those of the LDA and PBE functionals and generally closest to
+those of experiment. 
+ therefore expect the PBEsol functional
+to partially compensate for the shortcomings of the LDA and
+PBE functionals. 
+, the PBEsol functional gives rise to
+lattice constants and work functions in excellent agreement
+with experiment. 
+ therefore employed only the PBEsol
+functional to further investigate surface properties of nine novel
+hybrid catalysts, each of which consists of one metal monolayer
+on a TMC substrate. 
+We explored the correlation between experimental catalytic
+activity and three surface properties of 15 traditional and novel
+catalysts: the surface energy, work function, and PZC. 
+
+properties were selected for study because of their close
+relationship with many properties thought to influence catalytic
+activity. 
+ discovered a strong volcano-shaped correlation
+between the catalytic activity and the surface energy, indicating
+that the surface energy can be used as a novel, efficient
+descriptor of catalytic activity. 
+ simple descriptor is
+successful because it reflects the degree of coordinative
+unsaturation of the surface atoms and thus the reactivity of
+the surface. 
+ validation of this new descriptor is
+underway; HBE calculations to be reported elsewhere on,
+e. 
+. 
+ Pt/MoC2, confirm its placement near the peak of the
+volcano and its potential high activity for HER. 
+ further
+expect this descriptor could be useful beyond HER, to other
+catalytic reactions such as the oxygen reduction reaction, but
+verification of this speculation is the subject of future work. 
+We also performed electrochemical simulations for the 15
+materials based on JDFT. 
+ found that the surface energy in
+vacuum of these 15 materials is essentially unchanged by the
+presence of an aqueous solution. 
+ suggests that the vacuum
+surface energy is a sufficiently accurate metric, provided the
+water at the interface remains undissociated. 
+, we
+predicted the PZCs for most of the 15 catalysts, all of which
+await experimental verification. 
+ also confirmed the linear
+relationship between the PZC and work function. 
+,
+unlike the surface energy, there exists no obvious correlation
+between the catalytic activity and either the work function or
+the PZC. 
+ work thus identified an instructive indicator of
+catalytic activity of the HER. 
+ therefore propose that the
+surface energy can be used as a descriptor to search for Ptefficient catalysts exhibiting surface energies similar to that of
+the pure Pt surface. 
+■ ASSOCIATED CONTENT
+*S Supporting Information
+The Supporting Information is available free of charge on the
+ACS Publications website at DOI: 10. 
+/acs. 
+. 
+. 
+Surface energies and PZCs of six common catalysts
+computed with both VASP and JDFTx; stacking
+sequences, interlayer spacings, surface eneriges, and
+PZCs of nine novel catalysts; surface energies of TMCs
+with different surface terminations and in metal-rich or
+carbon-rich limits; derivation of equivalences between
+surface energy expressions and numerical validation;
+electrostatic profiles of WC(0001) surface with and
+without the presence of implicit ions (PDF)
+■ AUTHOR INFORMATION
+Corresponding Author
+*E-mail: eac@princeton. 
+. 
+Notes
+The authors declare no competing financial interest. 
+■ ACKNOWLEDGMENTS
+We are grateful to the Air Force Office of Scientific Research
+for funding (Grant FA9550-14-1-0254). 
+ acknowledge use
+of the TIGRESS high-performance computer center at
+Princeton University. 
+ also acknowledge use of the
+The Journal of Physical Chemistry C Article
+DOI: 10. 
+/acs. 
+. 
+
+J. 
+. 
+. 
+ 2016, 120, 23698−23706
+23704COPPER supercomputer at the Air Force Office of Scientific
+Research High Performance Computing Center. 
+ thank Dr. 
+Kiran Matthew, Dr. 
+ Sundararaman, and Prof. 
+Richard Hennig for helpful discussions on the VASPsol and
+JDFTx calculations. 
+ also thank Ms. 
+ Baughman and Dr. 
+Johannes M. 
+ for critical reading of this manuscript. 
+■ REFERENCES
+(1) Sharma, S. 
+ Ghoshal, S. 
+. 
+ the future transportation
+fuel: From production to applications. 
+ Sustainable Energy
+Rev. 
+, 43, 1151. 
+(2) Balat, M. 
+ importance of hydrogen as a future solution to
+environmental and transportation problems. 
+. 
+. 
+ Energy
+2008, 33, 4013. 
+(3) Bakenne, A. 
+ Nuttall, W. 
+ Kazantzis, N. 
+-Diagram-based
+insights into the hydrogen economy of today. 
+. 
+. 
+ Energy
+2016, 41, 7744. 
+(4) Nicholson, W. 
+ Carlisle, A. 
+. 
+. 
+. 
+ 1800, 7, 337. 
+(5) Trasatti, S. 
+ by oxides  Attempt at a unifying
+approach. 
+. 
+. 
+. 
+ Electrochem. 
+, 111, 125. 
+(6) Raj, I. 
+. 
+-based, binary-composite electrocatalysts for the
+cathodes in the energy-efficient industrial production of hydrogen
+from alkaline-water electrolytic cells. 
+. 
+. 
+. 
+, 28, 4375. 
+(7) Fosdick, S. 
+. 
+ Berglund, S. 
+. 
+ Mullins, C. 
+. 
+ Crooks, R. 
+. 
+Evaluating Electrocatalysts for the Hydrogen Evolution Reaction
+Using Bipolar Electrode Arrays: Bi- and Trimetallic Combinations of
+Co, Fe, Ni, Mo, and W. 
+ Catal. 
+, 4, 1332. 
+(8) Hinnemann, B. 
+ Moses, P. 
+. 
+ Bonde, J. 
+ Jørgensen, K. 
+. 
+
+Nielsen, J. 
+. 
+ Horch, S. 
+ Chorkendorff, I. 
+ Nørskov, J. 
+. 
+
+Hydrogen Evolution: MoS2 Nanoparticles as Catalyst for Hydrogen
+Evolution. 
+. 
+. 
+. 
+. 
+, 127, 5308. 
+(9) Li, Y. 
+ Wang, H. 
+ Xie, L. 
+ Liang, Y. 
+ Hong, G. 
+ Dai, H. 
+
+Nanoparticles Grown on Graphene: An Advanced Catalyst for the
+Hydrogen Evolution Reaction. 
+. 
+. 
+. 
+. 
+, 133, 7296. 
+(10) Fernandez, E. 
+. 
+ Moses, P. 
+. 
+ Toftelund, A. 
+ Hansen, H. 
+. 
+ ́
+Martínez, J. 
+. 
+ Abild-Pedersen, F. 
+ Kleis, J. 
+ Hinnemann, B. 
+ Rossmeisl,
+J. 
+ Bligaard, T. 
+ Nørskov, J. 
+. 
+ Relationships for Adsorption
+Energies on Transition Metal Oxide, Sulfide, and Nitride Surfaces. 
+Angew. 
+. 
+ Int. 
+. 
+, 47, 4683. 
+(11) Vrubel, H. 
+ Hu, X. 
+ Boride and Carbide Catalyze
+Hydrogen Evolution in both Acidic and Basic Solutions. 
+. 
+. 
+2012, 124, 12875. 
+(12) Popczun, E. 
+. 
+ McKone, J. 
+. 
+ Read, C. 
+. 
+ Biacchi, A. 
+. 
+
+Wiltrout, A. 
+. 
+ Lewis, N. 
+. 
+ Schaak, R. 
+. 
+ Nickel
+Phosphide as an Electrocatalyst for the Hydrogen Evolution Reaction. 
+J. 
+. 
+. 
+. 
+, 135, 9267. 
+(13) Armstrong, R. 
+. 
+ Bell, M. 
+. 
+ carbide catalysts for
+hydrogen evolution. 
+. 
+ 1978, 23, 1111. 
+(14) Hwu, H. 
+. 
+ Chen, J. 
+. 
+ Chemistry of Transition Metal
+Carbides. 
+. 
+. 
+, 105, 185. 
+(15) Meyer, S. 
+ Nikiforov, A. 
+. 
+ Petrushina, I. 
+. 
+ Köhler, K. 
+
+Christensen, E. 
+ Jensen, J. 
+. 
+ Bjerrum, N. 
+. 
+ metal carbides
+(WC, Mo2C, TaC, NbC) as potential electrocatalysts for the hydrogen
+evolution reaction (HER) at medium temperatures. 
+. 
+. 
+
+Energy 2015, 40, 2905. 
+(16) Esposito, D. 
+. 
+ Hunt, S. 
+. 
+ Stottlemyer, A. 
+. 
+ Dobson, K. 
+. 
+
+McCandless, B. 
+. 
+ Birkmire, R. 
+. 
+ Chen, J. 
+. 
+-Cost HydrogenEvolution Catalysts Based on Monolayer Platinum on Tungsten
+Monocarbide Substrates. 
+. 
+. 
+, 122, 10055. 
+(17) Zhuang, H. 
+ Tkalych, A. 
+. 
+ Carter, E. 
+. 
+ and
+Tuning the Hydrogen Evolution Reaction on Pt-Covered Tungsten
+Carbide Cathodes. 
+. 
+. 
+. 
+, 163, F629. 
+(18) Esposito, D. 
+. 
+ Hunt, S. 
+. 
+ Kimmel, Y. 
+. 
+ Chen, J. 
+. 
+ New
+Class of Electrocatalysts for Hydrogen Production from Water
+Electrolysis: Metal Monolayers Supported on Low-Cost Transition
+Metal Carbides. 
+. 
+. 
+. 
+. 
+, 134, 3025. 
+(19) Kelly, T. 
+. 
+ Chen, J. 
+. 
+ overlayer on metal carbide
+substrate: unique bimetallic properties for catalysis and electrocatalysis. 
+Chem. 
+. 
+. 
+, 41, 8021. 
+(20) Weidman, M. 
+. 
+ Esposito, D. 
+. 
+ Hsu, Y. 
+C. 
+ Chen, J. 
+. 
+Comparison of electrochemical stability of transition metal carbides
+(WC, W2C, Mo2C) over a wide pH range. 
+. 
+ Sources 2012, 202,
+11. 
+(21) Kimmel, Y. 
+. 
+ Esposito, D. 
+. 
+ Birkmire, R. 
+. 
+ Chen, J. 
+. 
+Effect of surface carbon on the hydrogen evolution reactivity of
+tungsten carbide (WC) and Pt-modified WC electrocatalysts. 
+. 
+. 
+Hydrogen Energy 2012, 37, 3019. 
+(22) Esposito, D. 
+. 
+ Chen, J. 
+. 
+ platinum supported on
+tungsten carbides as low-cost electrocatalysts: opportunities and
+limitations. 
+ Environ. 
+. 
+, 4, 3900. 
+(23) Kelly, T. 
+. 
+ Hunt, S. 
+. 
+ Esposito, D. 
+. 
+ Chen, J. 
+. 
+
+palladium supported on molybdenum and tungsten carbide substrates
+as low-cost hydrogen evolution reaction (HER) electrocatalysts. 
+. 
+. 
+Hydrogen Energy 2013, 38, 5638. 
+(24) Sabatier, P. 
+ Catalyse en Chemie Organique; Beranger: Paris et ́
+Liege, 1920. 
+
+(25) Parsons, R. 
+ rate of electrolytic hydrogen evolution and the
+heat of adsorption of hydrogen. 
+. 
+ Soc. 
+, 54, 1053. 
+(26) Parsons, R. 
+ evolution on platinum electrodes. 
+
+heats of activation for the component reactions. 
+. 
+ Soc. 
+1960, 56, 1340. 
+(27) Nørskov, J. 
+. 
+ Bligaard, T. 
+ Logadottir, A. 
+ Kitchin, J. 
+. 
+ Chen,
+J. 
+. 
+ Pandelov, S. 
+ Stimming, U. 
+ in the Exchange Current for
+Hydrogen Evolution. 
+. 
+. 
+. 
+, 152, J23. 
+(28) Greeley, J. 
+ Jaramillo, T. 
+. 
+ Bonde, J. 
+ Chorkendorff, I. 
+. 
+
+Norskov, J. 
+. 
+ high-throughput screening of electrocatalytic materials for hydrogen evolution. 
+. 
+. 
+, 5, 909. 
+(29) Jaramillo, T. 
+. 
+ Jørgensen, K. 
+. 
+ Bonde, J. 
+ Nielsen, J. 
+. 
+
+Horch, S. 
+ Chorkendorff, I. 
+ of Active Edge Sites for
+Electrochemical H2 Evolution from MoS2 Nanocatalysts. 
+ 2007,
+317, 100. 
+(30) Quaino, P. 
+ Juarez, F. 
+ Santos, E. 
+ Schmickler, W. 
+ plots
+in hydrogen electrocatalysis − uses and abuses. 
+ J. 
+. 
+2014, 5, 846. 
+(31) Kresse, G. 
+ Furthmüller, J. 
+ iterative schemes for ab
+initio total-energy calculations using a plane-wave basis set. 
+. 
+. 
+B: Condens. 
+ Mater. 
+. 
+, 54, 11169. 
+(32) Blöchl, P. 
+. 
+ augmented-wave method. 
+. 
+. 
+:
+Condens. 
+ Mater. 
+. 
+, 50, 17953. 
+(33) Kresse, G. 
+ Joubert, D. 
+ ultrasoft pseudopotentials to the
+projector augmented-wave method. 
+. 
+. 
+: Condens. 
+
+Mater. 
+. 
+, 59, 1758. 
+(34) Ceperley, D. 
+. 
+ Alder, B. 
+. 
+ State of the Electron Gas
+by a Stochastic Method. 
+. 
+. 
+. 
+, 45, 566. 
+(35) Perdew, J. 
+. 
+ Zunger, A. 
+-interaction correction to densityfunctional approximations for many-electron systems. 
+. 
+. 
+:
+Condens. 
+ Mater. 
+. 
+, 23, 5048. 
+(36) Perdew, J. 
+. 
+ Burke, K. 
+ Ernzerhof, M. 
+ gradient
+approximation made simple. 
+. 
+. 
+. 
+, 77, 3865. 
+(37) Perdew, J. 
+. 
+ Ruzsinszky, A. 
+ Csonka, G. 
+. 
+ Vydrov, O. 
+. 
+
+Scuseria, G. 
+. 
+ Constantin, L. 
+. 
+ Zhou, X. 
+ Burke, K. 
+ the
+Density-Gradient Expansion for Exchange in Solids and Surfaces. 
+. 
+Rev. 
+. 
+, 100, 136406. 
+(38) Monkhorst, H. 
+. 
+ Pack, J. 
+. 
+ points for Brillouin-zone
+integrations. 
+. 
+. 
+ 1976, 13, 5188. 
+(39) Methfessel, M. 
+ Paxton, A. 
+. 
+-precision sampling for
+Brillouin-zone integration in metals. 
+. 
+. 
+: Condens. 
+
+Mater. 
+. 
+, 40, 3616. 
+(40) Sansonetti, J. 
+. 
+ Martin, W. 
+. 
+ of Basic Atomic
+Spectroscopic Data. 
+. 
+. 
+. 
+. 
+ 2005, 34, 1559. 
+(41) Cohen, A. 
+. 
+ Mori-Sanchez, P. 
+ Yang, W. 
+ into Current ́
+Limitations of Density Functional Theory. 
+ 2008, 321, 792. 
+(42) Fattebert, J. 
+L. 
+ Gygi, F. 
+-principles molecular dynamics
+simulations in a continuum solvent. 
+. 
+. 
+ Chem. 
+, 93,
+139. 
+The Journal of Physical Chemistry C Article
+DOI: 10. 
+/acs. 
+. 
+
+J. 
+. 
+. 
+ 2016, 120, 23698−23706
+23705(43) Petrosyan, S. 
+. 
+ Rigos, A. 
+. 
+ Arias, T. 
+. 
+ DensityFunctional Theory: Ab Initio Study of Cr2O3 Surface Chemistry in
+Solution. 
+. 
+. 
+. 
+ 2005, 109, 15436. 
+(44) Andreussi, O. 
+ Dabo, I. 
+ Marzari, N. 
+ self-consistent
+continuum solvation in electronic-structure calculations. 
+. 
+. 
+. 
+2012, 136, 064102. 
+(45) Schwarz, K. 
+. 
+ Sundararaman, R. 
+ Letchworth-Weaver, K. 
+
+Arias, T. 
+. 
+ Hennig, R. 
+. 
+ for solvation in quantum
+Monte Carlo. 
+. 
+. 
+: Condens. 
+ Mater. 
+. 
+, 85,
+201102. 
+(46) Gunceler, D. 
+ Letchworth-Weaver, K. 
+ Sundararaman, R. 
+
+Schwarz, K. 
+. 
+ Arias, T. 
+. 
+ importance of nonlinear fluid
+response in joint density-functional theory studies of battery systems. 
+Modell. 
+. 
+. 
+. 
+. 
+, 21, 074005. 
+(47) Mathew, K. 
+ Sundararaman, R. 
+ Letchworth-Weaver, K. 
+ Arias,
+T. 
+. 
+ Hennig, R. 
+. 
+ solvation model for density-functional
+study of nanocrystal surfaces and reaction pathways. 
+. 
+. 
+. 
+2014, 140, 084106. 
+(48) Ismail-Beigi, S. 
+ Arias, T. 
+. 
+ algebraic formulation of
+density functional calculation. 
+. 
+. 
+. 
+, 128, 1. 
+(49) Sundararaman, R. 
+. 
+://jdftx. 
+. 
+. 
+(50) Garrity, K. 
+. 
+ Bennett, J. 
+. 
+ Rabe, K. 
+. 
+ Vanderbilt, D. 
+Pseudopotentials for high-throughput DFT calculations. 
+. 
+Mater. 
+. 
+, 81, 446. 
+(51) Jones, R. 
+. 
+ Gunnarsson, O. 
+ density functional formalism,
+its applications and prospects. 
+. 
+. 
+. 
+, 61, 689. 
+(52) Davey, W. 
+. 
+ Measurements of the Lattice Constants
+of Twelve Common Metals. 
+. 
+. 
+, 25, 753. 
+(53) de Boer, F. 
+. 
+ Boom, R. 
+ Mattens, W. 
+. 
+. 
+ Miedema, A. 
+. 
+
+Niessen, A. 
+. 
+ in Metals; North Holland: Amsterdam, 1988. 
+(54) Kittel, C. 
+ to Solid State Physics; Wiley: Hoboken, NJ,
+2004. 
+(55) Hansson, G. 
+. 
+ Flodström, S. 
+. 
+ study of the
+bulk and surface electronic structure of single crystals of gold. 
+. 
+Rev. 
+: Condens. 
+ Mater. 
+. 
+, 18, 1572. 
+(56) Murata, Y. 
+ Starodub, E. 
+ Kappes, B. 
+. 
+ Ciobanu, C. 
+. 
+ Bartelt,
+N. 
+. 
+ McCarty, K. 
+. 
+ Kodambaka, S. 
+-dependent work
+function of graphene on Pd(111). 
+. 
+. 
+. 
+, 97, 143114. 
+(57) Derry, G. 
+. 
+ Ji-Zhong, Z. 
+ function of Pt(111). 
+. 
+. 
+B: Condens. 
+ Mater. 
+. 
+, 39, 1940. 
+(58) Page, K. 
+ Li, J. 
+ Savinelli, R. 
+ Szumila, H. 
+. 
+ Zhang, J. 
+ Stalick, J. 
+K. 
+ Proffen, T. 
+ Scott, S. 
+. 
+ Seshadri, R. 
+-space and realspace neutron investigation of nanostructured Mo2C and WC. 
+
+State Sci. 
+, 10, 1499. 
+(59) Pierson, H. 
+. 
+ - Carbides of Group VI: Chromium,
+Molybdenum, and Tungsten Carbides. 
+ Handbook of Refractory
+Carbides and Nitrides; William Andrew Publishing: Westwood, NJ,
+1996; p 100. 
+(60) Singh-Miller, N. 
+. 
+ Marzari, N. 
+ energies, work
+functions, and surface relaxations of low-index metallic surfaces from
+first principles. 
+. 
+. 
+: Condens. 
+ Mater. 
+. 
+, 80,
+235407. 
+(61) Staroverov, V. 
+. 
+ Scuseria, G. 
+. 
+ Tao, J. 
+ Perdew, J. 
+. 
+ of
+a ladder of density functionals for bulk solids and surfaces. 
+. 
+. 
+:
+Condens. 
+ Mater. 
+. 
+, 69, 075102. 
+(62) Michaelides, A. 
+ Scheffler, M. 
+ Introduction to the Theory of
+Crystalline Elemental Solids and their Surfaces. 
+ Surface and Interface
+Science; Wiley-VCH Verlag GmbH & Co. 
+: Weinheim, Germany,
+2014; p 13. 
+(63) Reuter, K. 
+ Scheffler, M. 
+, structure, and stability of
+RuO2(110) as a function of oxygen pressure. 
+. 
+. 
+: Condens. 
+Matter Mater. 
+. 
+, 65, 035406. 
+(64) Grimme, S. 
+ Antony, J. 
+ Ehrlich, S. 
+ Krieg, H. 
+ consistent and
+accurate ab initio parametrization of density functional dispersion
+correction (DFT-D) for the 94 elements H-Pu. 
+. 
+. 
+. 
+,
+132, 154104. 
+(65) Siegel, D. 
+. 
+ Hector, L. 
+. 
+ Jr; Adams, J. 
+. 
+, stability,
+and bonding at metal/metal-carbide interfaces: Al/WC. 
+. 
+. 
+,
+498, 321. 
+(66) Politi, J. 
+. 
+. 
+. 
+ Vines, F. 
+ Rodriguez, J. 
+. 
+ Illas, F. 
+ and
+electronic structure of molybdenum carbide phases: bulk and low
+Miller-index surfaces. 
+. 
+. 
+. 
+. 
+, 15, 12617. 
+(67) Fall, C. 
+. 
+ Binggeli, N. 
+ Baldereschi, A. 
+-function
+anisotropy in noble metals: Contributions from d states and effects
+of the surface atomic structure. 
+. 
+. 
+: Condens. 
+ Mater. 
+Phys. 
+, 61, 8489. 
+(68) Totten, G. 
+. 
+ Linag, H. 
+ Modification and Mechanisms:
+Friction, Stress, and Reaction Engineering, 1st ed. 
+ CRC Press: Boca
+Raton, FL, 2004. 
+(69) Conway, B. 
+. 
+ Bockris, J. 
+. 
+. 
+ d-Band Character of
+Metals and the Rate and Mechanism of the Electrolytic Hydrogen
+Evolution Reaction. 
+ 1956, 178, 488. 
+(70) Letchworth-Weaver, K. 
+ Arias, T. 
+. 
+ density functional
+theory of the electrode-electrolyte interface: Application to fixed
+electrode potentials, interfacial capacitances, and potentials of zero
+charge. 
+. 
+. 
+: Condens. 
+ Mater. 
+. 
+, 86, 075140. 
+(71) Trasatti, S. 
+ function, electronegativity, and electrochemical behaviour of metals. 
+. 
+. 
+. 
+
+Electrochem. 
+, 33, 351. 
+The Journal of Physical Chemistry C Article
+DOI: 10. 
+/acs. 
+. 
+
+J. 
+. 
+. 
+ 2016, 120, 23698−23706
+23706
